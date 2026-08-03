@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="/assets/img/favicon-64.png">
+<link rel="apple-touch-icon" href="/assets/img/favicon-64.png">
+<script defer src="/assets/js/react.production.min.js"></script>
+<script defer src="/assets/js/react-dom.production.min.js"></script>
+<script defer src="/assets/js/dc-runtime.js"></script>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JV Massage Ltd. — Massage Therapy in Calgary NE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* latin-ext */
+@font-face {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/fonts/karla-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/fonts/karla-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/karla-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/karla-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/karla-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/karla-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/fonts/karla-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/fonts/karla-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/fonts/newsreader-italic-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/fonts/newsreader-italic-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/fonts/newsreader-italic-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/fonts/newsreader-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/fonts/newsreader-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/fonts/newsreader-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/newsreader-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/newsreader-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/newsreader-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/newsreader-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/newsreader-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/newsreader-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; overflow-x: hidden; background: #FAF6F0; color: #22302B; font-family: Karla, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #3E6157; text-decoration: none; }
+  a:hover { color: #22302B; }
+  input, textarea, select, button { font-family: inherit; }
+  @keyframes jvfade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; background: #FAF6F0;">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(250,246,240,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid #E4DDD2;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 8px clamp(16px, 4vw, 28px); display: flex; flex-wrap: nowrap; align-items: center; gap: 8px;">
+      <a href="#top" style="display: flex; align-items: center; flex: 0 0 auto;">
+        <img src="/assets/img/logo.png" alt="JV Massage Ltd." style="height: clamp(38px, 9vw, 46px); width: auto; display: block; mix-blend-mode: multiply;">
+      </a>
+      <nav style="flex: 1 1 auto; min-width: 0; display: flex; align-items: center; justify-content: flex-start; gap: 4px; font-size: 14px; letter-spacing: 0.02em; overflow-x: auto; scrollbar-width: none; white-space: nowrap;">
+        <a href="#services" style="color: #4A5A53; padding: 14px 10px; flex: 0 0 auto; margin-left: auto;" style-hover="color: #22302B;">Services</a>
+        <a href="#rates" style="color: #4A5A53; padding: 14px 10px; flex: 0 0 auto;" style-hover="color: #22302B;">Rates</a>
+        <a href="#about" style="color: #4A5A53; padding: 14px 10px; flex: 0 0 auto;" style-hover="color: #22302B;">About</a>
+        <a href="#visit" style="color: #4A5A53; padding: 14px 10px; flex: 0 0 auto;" style-hover="color: #22302B;">Visit</a>
+      </nav>
+      <a href="#book" style="flex: 0 0 auto; background: #3E6157; color: #FAF6F0; padding: 13px clamp(14px, 3vw, 20px); border-radius: 999px; font-weight: 500; font-size: 14px; white-space: nowrap;" style-hover="background: #22302B; color: #FAF6F0;">Book<span style="display: inline;"> a session</span></a>
+    </div>
+  </header>
+
+  <section id="top" style="scroll-margin-top: 80px; max-width: 1180px; margin: 0 auto; padding: clamp(36px, 6vw, 72px) clamp(16px, 4vw, 28px) 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(32px, 5vw, 56px); align-items: center;">
+    <div>
+      <p style="margin: 0 0 22px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A9089;">Calgary NE · Home studio &amp; mobile</p>
+      <h1 style="margin: 0; font-family: Newsreader, Georgia, serif; font-weight: 300; font-size: clamp(40px, 7.5vw, 68px); line-height: 1.06; letter-spacing: -0.02em; color: #22302B; text-wrap: balance;">Hands that have<br><em style="font-style: italic; color: #3E6157;">known your knots</em><br>for years.</h1>
+      <p style="margin: 26px 0 0; max-width: 46ch; font-size: 18px; line-height: 1.65; color: #4A5A53; text-wrap: pretty;">Virgie has been caring for Calgary families since 2011 — therapeutic, hot stone, prenatal, lymphatic and relaxation massage, tailored to whatever your body brought through the door. Come to the quiet little studio in Falconridge, or I'll come to you.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px;">
+        <a href="#book" style="background: #3E6157; color: #FAF6F0; padding: 16px 30px; border-radius: 999px; font-size: 15px; font-weight: 500;" style-hover="background: #22302B;">Request a booking</a>
+        <a href="{{ telHref }}" style="border: 1px solid #C9C0B2; color: #22302B; padding: 16px 30px; border-radius: 999px; font-size: 15px; font-weight: 500;" style-hover="border-color: #3E6157; color: #3E6157;">Call or text {{ phone }}</a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px; margin-top: 34px; padding-top: 26px; border-top: 1px solid #E4DDD2;">
+        <span style="font-family: Newsreader, Georgia, serif; font-size: 30px; color: #22302B;">5.0</span>
+        <span style="color: #C9A227; font-size: 15px; letter-spacing: 2px;">★★★★★</span>
+        <span style="font-size: 14px; color: #6E7A73;">38 Google reviews · many of them clients of 5+ years</span>
+      </div>
+    </div>
+    <div style="position: relative;">
+      <img src="/assets/img/treatment-room.webp" alt="The treatment room at JV Massage — inhale, exhale wall art, candles and hot stones" style="width: 100%; height: clamp(300px, 55vw, 560px); object-fit: cover; border-radius: 4px 4px 200px 200px; display: block;">
+    </div>
+  </section>
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: 40px clamp(16px, 4vw, 28px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1px; background: #E4DDD2; border: 1px solid #E4DDD2;">
+      <div style="background: #FAF6F0; padding: 28px 30px;">
+        <p style="margin: 0 0 6px; font-family: Newsreader, Georgia, serif; font-size: 21px; color: #22302B;">I travel to you</p>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #6E7A73;">Mobile appointments across Calgary — table, linens and stones come with me. Post-natal, post-surgical and seniors especially welcome.</p>
+      </div>
+      <div style="background: #FAF6F0; padding: 28px 30px;">
+        <p style="margin: 0 0 6px; font-family: Newsreader, Georgia, serif; font-size: 21px; color: #22302B;">Every session is custom</p>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #6E7A73;">Cupping, hot stones, Thai stretches and deep tissue get combined on the spot to suit what your body needs that day.</p>
+      </div>
+      <div style="background: #FAF6F0; padding: 28px 30px;">
+        <p style="margin: 0 0 6px; font-family: Newsreader, Georgia, serif; font-size: 21px; color: #22302B;">Open seven days? Nearly.</p>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #6E7A73;">Six days a week, evenings by arrangement. Closed Tuesdays. Same-week openings are common — just ask.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="scroll-margin-top: 90px; max-width: 1180px; margin: 0 auto; padding: clamp(56px, 9vw, 96px) clamp(16px, 4vw, 28px) 0;">
+    <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 30px; border-bottom: 1px solid #E4DDD2; padding-bottom: 20px;">
+      <h2 style="margin: 0; font-family: Newsreader, Georgia, serif; font-weight: 300; font-size: clamp(32px, 5.2vw, 46px); letter-spacing: -0.015em; color: #22302B;">What we offer</h2>
+      <p style="margin: 0; font-size: 14px; color: #8A9089;">Not sure which? Book a therapeutic session and we'll figure it out on the table.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 1px; background: #E4DDD2; margin-top: 1px;">
+      <sc-for list="{{ featured }}" as="s" hint-placeholder-count="8">
+        <div style="background: #FAF6F0; padding: 32px 28px 36px; min-height: 190px; display: flex; flex-direction: column;" style-hover="background: #F3EDE4;">
+          <span style="font-size: 12px; letter-spacing: 0.14em; color: #B0A794;">{{ s.num }}</span>
+          <h3 style="margin: 12px 0 10px; font-family: Newsreader, Georgia, serif; font-weight: 400; font-size: 24px; color: #22302B;">{{ s.name }}</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #6E7A73; text-wrap: pretty;">{{ s.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+    <div style="margin-top: 34px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+      <span style="font-size: 14px; color: #8A9089; margin-right: 6px;">Also available:</span>
+      <sc-for list="{{ alsoAvailable }}" as="a" hint-placeholder-count="8">
+        <span style="border: 1px solid #DDD5C8; border-radius: 999px; padding: 8px 16px; font-size: 14px; color: #4A5A53;">{{ a }}</span>
+      </sc-for>
+    </div>
+  </section>
+
+  <sc-if value="{{ showPricing }}" hint-placeholder-val="{{ true }}">
+    <section id="rates" style="scroll-margin-top: 90px; max-width: 1180px; margin: 0 auto; padding: clamp(56px, 9vw, 96px) clamp(16px, 4vw, 28px) 0;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(32px, 5vw, 56px);">
+        <div>
+          <h2 style="margin: 0; font-family: Newsreader, Georgia, serif; font-weight: 300; font-size: clamp(32px, 5.2vw, 46px); letter-spacing: -0.015em; color: #22302B;">Rates</h2>
+          <p style="margin: 20px 0 0; font-size: 16px; line-height: 1.7; color: #6E7A73; max-width: 34ch;">Cash, e-transfer and card accepted. Add-ons — cupping, hot stones, extra focus time — are folded into the session at no charge when there's time for them.</p>
+          <p style="margin: 22px 0 0; font-size: 14px; line-height: 1.6; color: #A08C6A; border-left: 2px solid #D9C9A8; padding-left: 14px;">Placeholder pricing — send me your real rates and I'll swap them in.</p>
+        </div>
+        <div>
+          <sc-for list="{{ rates }}" as="r" hint-placeholder-count="4">
+            <div style="display: flex; align-items: baseline; gap: 18px; padding: 22px 0; border-bottom: 1px solid #E4DDD2;">
+              <span style="font-family: Newsreader, Georgia, serif; font-size: 26px; color: #22302B; white-space: nowrap;">{{ r.len }}</span>
+              <span style="flex: 1; font-size: 15px; color: #6E7A73;">{{ r.note }}</span>
+              <span style="font-family: Newsreader, Georgia, serif; font-size: 26px; color: #3E6157;">{{ r.price }}</span>
+            </div>
+          </sc-for>
+          <div style="display: flex; gap: 30px; flex-wrap: wrap; margin-top: 26px; font-size: 15px; color: #6E7A73;">
+            <span>Mobile visit within Calgary <strong style="color: #22302B; font-weight: 500;">+$25</strong></span>
+            <span>Gift certificates available in any amount</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <section id="about" style="scroll-margin-top: 90px; margin-top: 96px; background: #22302B; color: #EDE7DD;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: clamp(56px, 9vw, 88px) clamp(16px, 4vw, 28px); display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(34px, 5vw, 60px); align-items: center;">
+      <img src="/assets/img/oils-and-stones.webp" alt="Essential oils and hot stones in the JV Massage studio" style="width: 100%; height: clamp(300px, 50vw, 520px); object-fit: cover; border-radius: 200px 200px 4px 4px; display: block;">
+      <div>
+        <p style="margin: 0 0 20px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #8FA79B;">About Virgie</p>
+        <h2 style="margin: 0; font-family: Newsreader, Georgia, serif; font-weight: 300; font-size: clamp(30px, 5vw, 46px); line-height: 1.15; letter-spacing: -0.015em; color: #FAF6F0;">"She's my day one massage therapist."</h2>
+        <p style="margin: 24px 0 0; font-size: 17px; line-height: 1.75; color: #C4CFC7; max-width: 52ch;">People don't come to JV Massage once. They come back for years, then bring their mother, their husband, their kid with the sore shoulder from hockey. That's the whole business — one therapist, a room that smells like eucalyptus, and enough time to actually listen before anyone gets on the table.</p>
+        <p style="margin: 18px 0 0; font-size: 17px; line-height: 1.75; color: #C4CFC7; max-width: 52ch;">Every session starts with a short check-in: what hurts, what you do all day, what you'd like to be able to do again. Pressure is yours to set, and you can change your mind halfway through.</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; padding-top: 30px; border-top: 1px solid #3A4A43;">
+          <div><p style="margin: 0; font-family: Newsreader, Georgia, serif; font-size: 34px; color: #FAF6F0;">14+</p><p style="margin: 4px 0 0; font-size: 14px; color: #8FA79B;">years in practice</p></div>
+          <div><p style="margin: 0; font-family: Newsreader, Georgia, serif; font-size: 34px; color: #FAF6F0;">5.0</p><p style="margin: 4px 0 0; font-size: 14px; color: #8FA79B;">Google rating</p></div>
+          <div><p style="margin: 0; font-family: Newsreader, Georgia, serif; font-size: 34px; color: #FAF6F0;">16</p><p style="margin: 4px 0 0; font-size: 14px; color: #8FA79B;">modalities offered</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: clamp(56px, 9vw, 88px) clamp(16px, 4vw, 28px) 0;">
+    <h2 style="margin: 0 0 34px; font-family: Newsreader, Georgia, serif; font-weight: 300; font-size: clamp(32px, 5.2vw, 46px); letter-spacing: -0.015em; color: #22302B;">In their words</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px;">
+      <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="3">
+        <figure style="margin: 0; background: #F3EDE4; padding: 34px 30px; display: flex; flex-direction: column; gap: 18px; border-radius: 3px;">
+          <span style="color: #C9A227; font-size: 13px; letter-spacing: 2px;">★★★★★</span>
+          <blockquote style="margin: 0; font-family: Newsreader, Georgia, serif; font-size: 21px; line-height: 1.45; color: #22302B; text-wrap: pretty;">{{ r.quote }}</blockquote>
+          <figcaption style="margin-top: auto; font-size: 14px; color: #8A9089;">{{ r.who }} · {{ r.when }}</figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="book" style="scroll-margin-top: 90px; max-width: 1180px; margin: 0 auto; padding: clamp(56px, 9vw, 96px) clamp(16px, 4vw, 28px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(36px, 5vw, 60px); align-items: start;">
+      <div>
+        <h2 style="margin: 0; font-family: Newsreader, Georgia, serif; font-weight: 300; font-size: clamp(32px, 5.2vw, 46px); letter-spacing: -0.015em; color: #22302B;">Request a booking</h2>
+        <p style="margin: 18px 0 30px; font-size: 16px; line-height: 1.7; color: #6E7A73; max-width: 44ch;">Tell me a little about what you need and when you're free. I answer texts fastest — <a href="{{ telHref }}" style="border-bottom: 1px solid #B7C4BC;">{{ phone }}</a>.</p>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="border: 1px solid #3E6157; background: #EFF3EF; padding: 34px 30px; border-radius: 3px; animation: jvfade 0.4s ease both;">
+            <p style="margin: 0; font-family: Newsreader, Georgia, serif; font-size: 26px; color: #22302B;">Thank you, {{ sentName }} — request received.</p>
+            <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.65; color: #4A5A53;">Virgie will text you back within a few hours to confirm a time. If it's urgent, call {{ phone }}.</p>
+            <button sc-camel-on-click="{{ reset }}" style="margin-top: 20px; background: none; border: 1px solid #C9C0B2; border-radius: 999px; padding: 10px 20px; font-size: 14px; color: #4A5A53; cursor: pointer;" style-hover="border-color: #3E6157; color: #3E6157;">Send another request</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form sc-camel-on-submit="{{ submit }}" style="display: grid; gap: 16px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px;">
+              <label style="display: grid; gap: 7px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #8A9089;">Name
+                <input name="name" required="required" style="border: 1px solid #DDD5C8; background: #FFFDF9; border-radius: 3px; padding: 14px 15px; font-size: 16px; color: #22302B; outline: none; text-transform: none; letter-spacing: normal;" style-focus="border-color: #3E6157;">
+              </label>
+              <label style="display: grid; gap: 7px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #8A9089;">Phone
+                <input name="phone" required="required" type="tel" style="border: 1px solid #DDD5C8; background: #FFFDF9; border-radius: 3px; padding: 14px 15px; font-size: 16px; color: #22302B; outline: none; letter-spacing: normal;" style-focus="border-color: #3E6157;">
+              </label>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px;">
+              <label style="display: grid; gap: 7px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #8A9089;">Service
+                <sc-raw-select name="service" style="border: 1px solid #DDD5C8; background: #FFFDF9; border-radius: 3px; padding: 14px 15px; font-size: 16px; color: #22302B; outline: none; letter-spacing: normal;">
+                  <sc-for list="{{ allServices }}" as="s" hint-placeholder-count="6">
+                    <option value="{{ s }}">{{ s }}</option>
+                  </sc-for>
+                </sc-raw-select>
+              </label>
+              <label style="display: grid; gap: 7px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #8A9089;">Where
+                <sc-raw-select name="where" style="border: 1px solid #DDD5C8; background: #FFFDF9; border-radius: 3px; padding: 14px 15px; font-size: 16px; color: #22302B; outline: none; letter-spacing: normal;">
+                  <option value="studio">At the studio (Falconridge NE)</option>
+                  <option value="mobile">Mobile — come to me</option>
+                </sc-raw-select>
+              </label>
+            </div>
+            <label style="display: grid; gap: 7px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #8A9089;">When works for you, and what's bothering you?
+              <textarea name="notes" rows="4" placeholder="e.g. Weekday evenings. Lower back and left shoulder have been tight since I started driving for work." style="border: 1px solid #DDD5C8; background: #FFFDF9; border-radius: 3px; padding: 14px 15px; font-size: 16px; line-height: 1.55; color: #22302B; outline: none; resize: vertical; text-transform: none; letter-spacing: normal;" style-focus="border-color: #3E6157;"></textarea>
+            </label>
+            <div style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 4px;">
+              <button type="submit" style="background: #3E6157; color: #FAF6F0; border: none; padding: 16px 32px; border-radius: 999px; font-size: 15px; font-weight: 500; cursor: pointer;" style-hover="background: #22302B;">Send request</button>
+              <span style="font-size: 14px; color: #8A9089;">No deposit required.</span>
+            </div>
+          </form>
+        </sc-if>
+      </div>
+
+      <div id="visit" style="scroll-margin-top: 90px; background: #F3EDE4; padding: clamp(26px, 5vw, 40px) clamp(20px, 4vw, 36px); border-radius: 3px;">
+        <h3 style="margin: 0 0 6px; font-family: Newsreader, Georgia, serif; font-weight: 400; font-size: 28px; color: #22302B;">Visiting the studio</h3>
+        <p style="margin: 0 0 24px; font-size: 16px; line-height: 1.6; color: #4A5A53;">60 Falchurch Crescent NE<br>Calgary, AB T3J 1K1</p>
+        <p style="margin: 0 0 28px; font-size: 15px; line-height: 1.65; color: #6E7A73;">Free street parking right out front, and the driveway is yours if it's empty. Come to the front door — no buzzer, no waiting room. Arriving five minutes early is plenty.</p>
+        <div style="border-top: 1px solid #E1D8CA; padding-top: 22px;">
+          <p style="margin: 0 0 14px; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9089;">Hours</p>
+          <sc-for list="{{ hours }}" as="h" hint-placeholder-count="7">
+            <div style="display: flex; justify-content: space-between; gap: 16px; padding: 7px 0; font-size: 15px; color: #4A5A53;">
+              <span>{{ h.day }}</span>
+              <span style="color: {{ h.color }};">{{ h.time }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <a href="https://maps.google.com/?q=60+Falchurch+Crescent+NE,+Calgary,+AB+T3J+1K1" style="display: inline-block; margin-top: 26px; border: 1px solid #C9C0B2; border-radius: 999px; padding: 13px 24px; font-size: 15px; color: #22302B;" style-hover="border-color: #3E6157; color: #3E6157;">Get directions</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: clamp(56px, 9vw, 96px) clamp(16px, 4vw, 28px) 0;">
+    <h2 style="margin: 0 0 8px; font-family: Newsreader, Georgia, serif; font-weight: 300; font-size: clamp(32px, 5.2vw, 46px); letter-spacing: -0.015em; color: #22302B;">Good to know</h2>
+    <div style="border-top: 1px solid #E4DDD2; margin-top: 26px;">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+        <details style="border-bottom: 1px solid #E4DDD2; padding: 22px 0;">
+          <summary style="cursor: pointer; list-style: none; font-family: Newsreader, Georgia, serif; font-size: clamp(20px, 3.6vw, 23px); color: #22302B;">{{ f.q }}</summary>
+          <p style="margin: 14px 0 0; font-size: 16px; line-height: 1.7; color: #6E7A73; max-width: 72ch; text-wrap: pretty;">{{ f.a }}</p>
+        </details>
+      </sc-for>
+    </div>
+  </section>
+
+  <footer style="margin-top: 96px; border-top: 1px solid #E4DDD2;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: clamp(40px, 6vw, 56px) clamp(16px, 4vw, 28px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 28px 40px; align-items: center;">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px 22px;">
+        <img src="/assets/img/logo.png" alt="JV Massage Ltd." style="height: 74px; width: auto; mix-blend-mode: multiply;">
+        <div>
+          <p style="margin: 0; font-size: 15px; color: #4A5A53;">Massage therapy in Calgary since 2011 · Studio &amp; mobile</p>
+          <p style="margin: 6px 0 0; font-size: 15px; color: #8A9089;">60 Falchurch Crescent NE · <a href="{{ telHref }}">{{ phone }}</a></p>
+        </div>
+      </div>
+      <a href="#book" style="background: #3E6157; color: #FAF6F0; padding: 15px 28px; border-radius: 999px; font-size: 15px; font-weight: 500;" style-hover="background: #22302B;">Book a session</a>
+    </div>
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 28px) 40px; font-size: 13px; color: #A0A69F;">© 2026 JV Massage Ltd. All rights reserved.</div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;phone&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;(587) 777-1687&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showPricing&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { sent: false, sentName: "" };
+
+  renderVals() {
+    const phone = this.props.phone ?? "(587) 777-1687";
+    const featured = [
+      { num: "01", name: "Therapeutic Massage", desc: "The everyday workhorse — assess, treat, and send you home with something that actually helps." },
+      { num: "02", name: "Deep Tissue", desc: "Slow, firm work into the layers that hold on. Pressure always stays yours to set." },
+      { num: "03", name: "Hot Stone", desc: "Warm basalt stones melt tight backs and shoulders open before hands ever get there." },
+      { num: "04", name: "Lymphatic Drainage", desc: "Light rhythmic work for swelling, post-surgical recovery and heavy, sluggish limbs." },
+      { num: "05", name: "Prenatal", desc: "Side-lying and fully bolstered. Hips, low back and legs, safely through every trimester." },
+      { num: "06", name: "Relaxation & Swedish", desc: "Nowhere to be, nothing to fix. Long flowing strokes and an hour of quiet." },
+      { num: "07", name: "Cupping & Thai Stretch", desc: "Suction and assisted stretching layered into a session when the muscle needs more room." },
+      { num: "08", name: "Toddler & Kids", desc: "Short, gentle sessions for growing bodies — sports strains, growing pains, restless sleepers." }
+    ];
+    const alsoAvailable = ["Foot massage", "Reflexology", "Sports massage", "Full body", "Back & neck focus", "Chinese massage", "Ayurvedic", "Remedial"];
+    const rates = [
+      { len: "30 min", note: "Focused area — neck, back or feet", price: "$60" },
+      { len: "60 min", note: "The most-booked session", price: "$95" },
+      { len: "90 min", note: "Full body with time to go deep", price: "$135" },
+      { len: "120 min", note: "Hot stone or full-body plus cupping", price: "$175" }
+    ];
+    const reviews = [
+      { quote: "One of the best massage experiences I've ever had. She knew exactly where to focus and relieved tension I didn't even realize I had.", who: "Ronald L.", when: "Google review" },
+      { quote: "I've been going with Ate Virgie since I was in highschool, and it's been 6 years ever since. Nothing beats her customized massage.", who: "Meagan V.", when: "Google review" },
+      { quote: "It has truly become a place our family always comes back to. From the very first visit we felt welcomed and completely at ease.", who: "Ma-an R.", when: "Google review" }
+    ];
+    const hours = [
+      { day: "Sunday", time: "10 a.m. – 6 p.m." },
+      { day: "Monday", time: "10 a.m. – 6 p.m." },
+      { day: "Tuesday", time: "Closed" },
+      { day: "Wednesday", time: "9 a.m. – 5 p.m." },
+      { day: "Thursday", time: "10 a.m. – 6 p.m." },
+      { day: "Friday", time: "10 a.m. – 6 p.m." },
+      { day: "Saturday", time: "10 a.m. – 6 p.m." }
+    ].map(h => ({ ...h, color: h.time === "Closed" ? "#B5A99A" : "#22302B" }));
+    const faqs = [
+      { q: "Do you direct bill insurance?", a: "Not at this time — JV Massage is a non-RMT wellness practice, so sessions aren't eligible for insurance reimbursement or direct billing. Receipts are always available on request for your own records." },
+      { q: "Can you come to my home?", a: "Yes. Mobile appointments are available across Calgary for a small travel fee. I bring the table, linens, oils and stones — you just need a quiet room with space to walk around the table." },
+      { q: "What's your cancellation policy?", a: "Life happens. Please give 24 hours' notice so the time can go to someone else. Under 24 hours or a no-show is charged at 50% of the session, waived once for genuine emergencies." },
+      { q: "Do you sell gift certificates?", a: "Yes, in any dollar amount or by session length. Text or email and I'll send a printable certificate the same day — they don't expire." },
+      { q: "Where do I park?", a: "Free street parking directly in front of the house on Falchurch Crescent, and the driveway is available when it's empty. Come to the front door about five minutes before your appointment." },
+      { q: "What should I wear?", a: "Whatever you're comfortable in. You'll be draped throughout, and you undress only to your comfort level — plenty of clients stay fully clothed for Thai stretch or reflexology work." }
+    ];
+    const allServices = ["Therapeutic Massage", "Deep Tissue", "Hot Stone", "Lymphatic Drainage", "Prenatal", "Relaxation / Swedish", "Cupping & Thai Stretch", "Toddler & Kids", "Not sure yet"];
+
+    return {
+      phone,
+      telHref: "tel:+1" + phone.replace(/\D/g, ""),
+      showPricing: this.props.showPricing ?? true,
+      featured, alsoAvailable, rates, reviews, hours, faqs, allServices,
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      sentName: this.state.sentName,
+      submit: (e) => {
+        e.preventDefault();
+        const name = (new FormData(e.target).get("name") || "").toString().trim();
+        this.setState({ sent: true, sentName: name.split(" ")[0] || "friend" });
+      },
+      reset: () => this.setState({ sent: false, sentName: "" })
+    };
+  }
+}
+
+</script>
+
+
+</body></html>

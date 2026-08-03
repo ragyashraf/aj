@@ -1,0 +1,13 @@
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        - echo "Static site — no build step required."
+  artifacts:
+    # The repo root already is the deployable site.
+    baseDirectory: /
+    files:
+      - '**/*'
+  cache:
+    paths: []
