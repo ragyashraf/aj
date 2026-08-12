@@ -204,15 +204,18 @@
   a:hover { color: #22302B; }
   input, textarea, select, button { font-family: inherit; }
   @keyframes jvfade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  /* Narrow screens: drop the header wordmark so the nav keeps its width. */
+  @media (max-width: 700px) { .hdr-word { display: none; } }
 </style>
 </helmet>
 
 <div style="min-height: 100vh; background: #FAF6F0;">
 
   <header style="position: sticky; top: 0; z-index: 50; background: rgba(250,246,240,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid #E4DDD2;">
-    <div style="max-width: 1180px; margin: 0 auto; padding: 8px clamp(16px, 4vw, 28px); display: flex; flex-wrap: nowrap; align-items: center; gap: 8px;">
-      <a href="#top" style="display: flex; align-items: center; flex: 0 0 auto;">
-        <img src="/assets/img/logo-mark.png" alt="JV Massage Ltd." style="height: clamp(38px, 9vw, 46px); width: auto; display: block;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 10px clamp(16px, 4vw, 28px); display: flex; flex-wrap: nowrap; align-items: center; gap: 8px;">
+      <a href="#top" style="display: flex; align-items: center; gap: 10px; flex: 0 0 auto;">
+        <img src="/assets/img/logo-mark.png" alt="" style="height: clamp(40px, 8vw, 54px); width: auto; display: block; flex: 0 0 auto;">
+        <span class="hdr-word" style="font-family: Newsreader, Georgia, serif; font-weight: 400; font-size: clamp(18px, 2.2vw, 21px); line-height: 1.05; letter-spacing: 0.01em; color: #22302B; white-space: nowrap;">JV Massage<span style="color: #8A9089; font-size: 0.72em;"> Ltd.</span></span>
       </a>
       <nav style="flex: 1 1 auto; min-width: 0; display: flex; align-items: center; justify-content: flex-start; gap: 4px; font-size: 14px; letter-spacing: 0.02em; overflow-x: auto; scrollbar-width: none; white-space: nowrap;">
         <a href="#services" style="color: #4A5A53; padding: 14px 10px; flex: 0 0 auto; margin-left: auto;" style-hover="color: #22302B;">Services</a>
@@ -412,9 +415,9 @@
   <footer style="margin-top: 96px; border-top: 1px solid #E4DDD2;">
     <div style="max-width: 1180px; margin: 0 auto; padding: clamp(40px, 6vw, 56px) clamp(16px, 4vw, 28px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 28px 40px; align-items: center;">
       <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px 22px;">
-        <img src="/assets/img/logo.png" alt="JV Massage Ltd." style="height: 96px; width: auto;">
+        <img src="/assets/img/logo-mark.png" alt="JV Massage Ltd." style="height: 84px; width: auto;">
         <div>
-          <p style="margin: 0; font-size: 15px; color: #4A5A53;">Massage therapy in Calgary since 2011 · Falconridge studio</p>
+          <p style="margin: 0 0 4px; font-family: Newsreader, Georgia, serif; font-size: 22px; color: #22302B;">JV Massage<span style="color: #8A9089; font-size: 0.72em;"> Ltd.</span></p><p style="margin: 0; font-size: 15px; color: #4A5A53;">Massage therapy in Calgary since 2011 · Falconridge studio</p>
           <p style="margin: 6px 0 0; font-size: 15px; color: #8A9089;">60 Falchurch Crescent NE · <a href="{{ telHref }}">{{ phone }}</a></p>
         </div>
       </div>
