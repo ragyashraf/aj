@@ -13,7 +13,7 @@
 <x-dc>
 <helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JV Massage Ltd. — Massage Therapy in Calgary NE</title>
+<title>JV Massage Ltd. — Therapeutic Massage in Calgary NE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <style>/* latin-ext */
@@ -226,9 +226,9 @@
 
   <section id="top" style="scroll-margin-top: 80px; max-width: 1180px; margin: 0 auto; padding: clamp(36px, 6vw, 72px) clamp(16px, 4vw, 28px) 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(32px, 5vw, 56px); align-items: center;">
     <div>
-      <p style="margin: 0 0 22px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A9089;">Calgary NE · Home studio &amp; mobile</p>
+      <p style="margin: 0 0 22px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A9089;">Calgary NE · Home studio in Falconridge</p>
       <h1 style="margin: 0; font-family: Newsreader, Georgia, serif; font-weight: 300; font-size: clamp(40px, 7.5vw, 68px); line-height: 1.06; letter-spacing: -0.02em; color: #22302B; text-wrap: balance;">Hands that have<br><em style="font-style: italic; color: #3E6157;">known your knots</em><br>for years.</h1>
-      <p style="margin: 26px 0 0; max-width: 46ch; font-size: 18px; line-height: 1.65; color: #4A5A53; text-wrap: pretty;">Virgie has been caring for Calgary families since 2011 — therapeutic, hot stone, prenatal, lymphatic and relaxation massage, tailored to whatever your body brought through the door. Come to the quiet little studio in Falconridge, or I'll come to you.</p>
+      <p style="margin: 26px 0 0; max-width: 46ch; font-size: 18px; line-height: 1.65; color: #4A5A53; text-wrap: pretty;">Virgie has been caring for Calgary families since 2011 — therapeutic massage, tailored to whatever your body brought through the door. Come to the quiet little studio in Falconridge.</p>
       <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px;">
         <a href="#book" style="background: #3E6157; color: #FAF6F0; padding: 16px 30px; border-radius: 999px; font-size: 15px; font-weight: 500;" style-hover="background: #22302B;">Request a booking</a>
         <a href="{{ telHref }}" style="border: 1px solid #C9C0B2; color: #22302B; padding: 16px 30px; border-radius: 999px; font-size: 15px; font-weight: 500;" style-hover="border-color: #3E6157; color: #3E6157;">Call or text {{ phone }}</a>
@@ -247,12 +247,8 @@
   <section style="max-width: 1180px; margin: 0 auto; padding: 40px clamp(16px, 4vw, 28px) 0;">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1px; background: #E4DDD2; border: 1px solid #E4DDD2;">
       <div style="background: #FAF6F0; padding: 28px 30px;">
-        <p style="margin: 0 0 6px; font-family: Newsreader, Georgia, serif; font-size: 21px; color: #22302B;">I travel to you</p>
-        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #6E7A73;">Mobile appointments across Calgary — table, linens and stones come with me. Post-natal, post-surgical and seniors especially welcome.</p>
-      </div>
-      <div style="background: #FAF6F0; padding: 28px 30px;">
         <p style="margin: 0 0 6px; font-family: Newsreader, Georgia, serif; font-size: 21px; color: #22302B;">Every session is custom</p>
-        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #6E7A73;">Cupping, hot stones, Thai stretches and deep tissue get combined on the spot to suit what your body needs that day.</p>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #6E7A73;">Pressure, pacing and focus are set on the spot to suit what your body needs that day.</p>
       </div>
       <div style="background: #FAF6F0; padding: 28px 30px;">
         <p style="margin: 0 0 6px; font-family: Newsreader, Georgia, serif; font-size: 21px; color: #22302B;">Open seven days? Nearly.</p>
@@ -264,21 +260,15 @@
   <section id="services" style="scroll-margin-top: 90px; max-width: 1180px; margin: 0 auto; padding: clamp(56px, 9vw, 96px) clamp(16px, 4vw, 28px) 0;">
     <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 30px; border-bottom: 1px solid #E4DDD2; padding-bottom: 20px;">
       <h2 style="margin: 0; font-family: Newsreader, Georgia, serif; font-weight: 300; font-size: clamp(32px, 5.2vw, 46px); letter-spacing: -0.015em; color: #22302B;">What we offer</h2>
-      <p style="margin: 0; font-size: 14px; color: #8A9089;">Not sure which? Book a therapeutic session and we'll figure it out on the table.</p>
+      <p style="margin: 0; font-size: 14px; color: #8A9089;">One thing, done properly. We'll figure out the rest on the table.</p>
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 1px; background: #E4DDD2; margin-top: 1px;">
-      <sc-for list="{{ featured }}" as="s" hint-placeholder-count="8">
+      <sc-for list="{{ featured }}" as="s" hint-placeholder-count="1">
         <div style="background: #FAF6F0; padding: 32px 28px 36px; min-height: 190px; display: flex; flex-direction: column;" style-hover="background: #F3EDE4;">
           <span style="font-size: 12px; letter-spacing: 0.14em; color: #B0A794;">{{ s.num }}</span>
           <h3 style="margin: 12px 0 10px; font-family: Newsreader, Georgia, serif; font-weight: 400; font-size: 24px; color: #22302B;">{{ s.name }}</h3>
           <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #6E7A73; text-wrap: pretty;">{{ s.desc }}</p>
         </div>
-      </sc-for>
-    </div>
-    <div style="margin-top: 34px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
-      <span style="font-size: 14px; color: #8A9089; margin-right: 6px;">Also available:</span>
-      <sc-for list="{{ alsoAvailable }}" as="a" hint-placeholder-count="8">
-        <span style="border: 1px solid #DDD5C8; border-radius: 999px; padding: 8px 16px; font-size: 14px; color: #4A5A53;">{{ a }}</span>
       </sc-for>
     </div>
   </section>
@@ -288,8 +278,7 @@
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(32px, 5vw, 56px);">
         <div>
           <h2 style="margin: 0; font-family: Newsreader, Georgia, serif; font-weight: 300; font-size: clamp(32px, 5.2vw, 46px); letter-spacing: -0.015em; color: #22302B;">Rates</h2>
-          <p style="margin: 20px 0 0; font-size: 16px; line-height: 1.7; color: #6E7A73; max-width: 34ch;">Cash, e-transfer and card accepted. Add-ons — cupping, hot stones, extra focus time — are folded into the session at no charge when there's time for them.</p>
-          <p style="margin: 22px 0 0; font-size: 14px; line-height: 1.6; color: #A08C6A; border-left: 2px solid #D9C9A8; padding-left: 14px;">Placeholder pricing — send me your real rates and I'll swap them in.</p>
+          <p style="margin: 20px 0 0; font-size: 16px; line-height: 1.7; color: #6E7A73; max-width: 34ch;">Cash, e-transfer and card accepted. Extra focus time on a stubborn area is folded into the session at no charge when there's time for it.</p>
         </div>
         <div>
           <sc-for list="{{ rates }}" as="r" hint-placeholder-count="4">
@@ -300,7 +289,6 @@
             </div>
           </sc-for>
           <div style="display: flex; gap: 30px; flex-wrap: wrap; margin-top: 26px; font-size: 15px; color: #6E7A73;">
-            <span>Mobile visit within Calgary <strong style="color: #22302B; font-weight: 500;">+$25</strong></span>
             <span>Gift certificates available in any amount</span>
           </div>
         </div>
@@ -371,7 +359,6 @@
               <label style="display: grid; gap: 7px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #8A9089;">Where
                 <sc-raw-select name="where" style="border: 1px solid #DDD5C8; background: #FFFDF9; border-radius: 3px; padding: 14px 15px; font-size: 16px; color: #22302B; outline: none; letter-spacing: normal;">
                   <option value="studio">At the studio (Falconridge NE)</option>
-                  <option value="mobile">Mobile — come to me</option>
                 </sc-raw-select>
               </label>
             </div>
@@ -421,7 +408,7 @@
       <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px 22px;">
         <img src="/assets/img/logo.png" alt="JV Massage Ltd." style="height: 74px; width: auto; mix-blend-mode: multiply;">
         <div>
-          <p style="margin: 0; font-size: 15px; color: #4A5A53;">Massage therapy in Calgary since 2011 · Studio &amp; mobile</p>
+          <p style="margin: 0; font-size: 15px; color: #4A5A53;">Therapeutic massage in Calgary since 2011 · Falconridge studio</p>
           <p style="margin: 6px 0 0; font-size: 15px; color: #8A9089;">60 Falchurch Crescent NE · <a href="{{ telHref }}">{{ phone }}</a></p>
         </div>
       </div>
@@ -439,21 +426,13 @@ class Component extends DCLogic {
   renderVals() {
     const phone = this.props.phone ?? "(587) 777-1687";
     const featured = [
-      { num: "01", name: "Therapeutic Massage", desc: "The everyday workhorse — assess, treat, and send you home with something that actually helps." },
-      { num: "02", name: "Deep Tissue", desc: "Slow, firm work into the layers that hold on. Pressure always stays yours to set." },
-      { num: "03", name: "Hot Stone", desc: "Warm basalt stones melt tight backs and shoulders open before hands ever get there." },
-      { num: "04", name: "Lymphatic Drainage", desc: "Light rhythmic work for swelling, post-surgical recovery and heavy, sluggish limbs." },
-      { num: "05", name: "Prenatal", desc: "Side-lying and fully bolstered. Hips, low back and legs, safely through every trimester." },
-      { num: "06", name: "Relaxation & Swedish", desc: "Nowhere to be, nothing to fix. Long flowing strokes and an hour of quiet." },
-      { num: "07", name: "Cupping & Thai Stretch", desc: "Suction and assisted stretching layered into a session when the muscle needs more room." },
-      { num: "08", name: "Toddler & Kids", desc: "Short, gentle sessions for growing bodies — sports strains, growing pains, restless sleepers." }
+      { num: "01", name: "Therapeutic Massage", desc: "The everyday workhorse — assess, treat, and send you home with something that actually helps." }
     ];
-    const alsoAvailable = ["Foot massage", "Reflexology", "Sports massage", "Full body", "Back & neck focus", "Chinese massage", "Ayurvedic", "Remedial"];
     const rates = [
-      { len: "30 min", note: "Focused area — neck, back or feet", price: "$60" },
-      { len: "60 min", note: "The most-booked session", price: "$95" },
-      { len: "90 min", note: "Full body with time to go deep", price: "$135" },
-      { len: "120 min", note: "Hot stone or full-body plus cupping", price: "$175" }
+      { len: "30 min", note: "Focused area — neck, back or feet", price: "$50" },
+      { len: "60 min", note: "The most-booked session", price: "$100" },
+      { len: "90 min", note: "Full body with time to go deep", price: "$150" },
+      { len: "120 min", note: "The full unhurried session", price: "$200" }
     ];
     const reviews = [
       { quote: "One of the best massage experiences I've ever had. She knew exactly where to focus and relieved tension I didn't even realize I had.", who: "Ronald L.", when: "Google review" },
@@ -471,13 +450,13 @@ class Component extends DCLogic {
     ].map(h => ({ ...h, color: h.time === "Closed" ? "#B5A99A" : "#22302B" }));
     const faqs = [
       { q: "Do you direct bill insurance?", a: "Not at this time — JV Massage is a non-RMT wellness practice, so sessions aren't eligible for insurance reimbursement or direct billing. Receipts are always available on request for your own records." },
-      { q: "Can you come to my home?", a: "Yes. Mobile appointments are available across Calgary for a small travel fee. I bring the table, linens, oils and stones — you just need a quiet room with space to walk around the table." },
+      { q: "Do you offer home visits?", a: "Not at this time — all sessions take place at the home studio in Falconridge NE. There's free parking right out front and no waiting room, so it stays quiet and unhurried." },
       { q: "What's your cancellation policy?", a: "Life happens. Please give 24 hours' notice so the time can go to someone else. Under 24 hours or a no-show is charged at 50% of the session, waived once for genuine emergencies." },
       { q: "Do you sell gift certificates?", a: "Yes, in any dollar amount or by session length. Text or email and I'll send a printable certificate the same day — they don't expire." },
       { q: "Where do I park?", a: "Free street parking directly in front of the house on Falchurch Crescent, and the driveway is available when it's empty. Come to the front door about five minutes before your appointment." },
-      { q: "What should I wear?", a: "Whatever you're comfortable in. You'll be draped throughout, and you undress only to your comfort level — plenty of clients stay fully clothed for Thai stretch or reflexology work." }
+      { q: "What should I wear?", a: "Whatever you're comfortable in. You'll be draped throughout, and you undress only to your comfort level." }
     ];
-    const allServices = ["Therapeutic Massage", "Deep Tissue", "Hot Stone", "Lymphatic Drainage", "Prenatal", "Relaxation / Swedish", "Cupping & Thai Stretch", "Toddler & Kids", "Not sure yet"];
+    const allServices = ["Therapeutic Massage"];
 
     return {
       phone,
