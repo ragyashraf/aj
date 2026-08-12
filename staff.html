@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Staff · JV Massage Ltd.</title>
+<link rel="icon" type="image/png" href="/assets/img/favicon-64.png">
+<style>
+  @font-face{font-family:'Karla';font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fonts/karla-latin.woff2") format('woff2')}
+  @font-face{font-family:'Karla';font-style:normal;font-weight:500;font-display:swap;src:url("/assets/fonts/karla-latin.woff2") format('woff2')}
+  @font-face{font-family:'Karla';font-style:normal;font-weight:700;font-display:swap;src:url("/assets/fonts/karla-latin.woff2") format('woff2')}
+  @font-face{font-family:'Newsreader';font-style:normal;font-weight:300;font-display:swap;src:url("/assets/fonts/newsreader-latin.woff2") format('woff2')}
+  @font-face{font-family:'Newsreader';font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fonts/newsreader-latin.woff2") format('woff2')}
+  @font-face{font-family:'Newsreader';font-style:normal;font-weight:600;font-display:swap;src:url("/assets/fonts/newsreader-latin.woff2") format('woff2')}
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Karla',system-ui,sans-serif;color:#22302B;background:#FAF6F0;min-height:100vh}
+  .serif{font-family:'Newsreader',Georgia,serif}
+  .btn{border:none;border-radius:999px;font-weight:500;font-size:14px;cursor:pointer;font-family:'Karla',sans-serif;padding:10px 18px;transition:filter .15s ease;display:inline-flex;align-items:center;gap:7px}
+  .btn:hover{filter:brightness(1.08)}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .btn-teal{background:#3E6157;color:#FAF6F0}
+  .btn-ghost{background:#FFFDF9;color:#22302B;border:1.5px solid #DDD5C8}
+  .btn-red{background:#FFFDF9;color:#A2493F;border:1.5px solid #E4C7C1}
+  .btn-amber{background:#FFFDF9;color:#8A6D18;border:1.5px solid #E7D8A8}
+  .btn-sm{padding:7px 14px;font-size:13px}
+  .ico{width:16px;height:16px;flex-shrink:0}
+  input,textarea,select{width:100%;border:1.5px solid #DDD5C8;border-radius:3px;padding:11px 13px;font-size:14.5px;font-family:'Karla',sans-serif;color:#22302B;background:#FFFDF9}
+  textarea{resize:vertical;min-height:62px;line-height:1.5}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:#3E6157}
+  .card{background:#FFFDF9;border:1px solid #E4DDD2;border-radius:4px}
+  .pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .s-pending{background:#F6EDD9;color:#8A6D18}
+  .s-confirmed{background:#E1EBE4;color:#3E6157}
+  .s-declined{background:#F3E0DC;color:#A2493F}
+  .s-cancelled{background:#EDE8DF;color:#6E7A73}
+  .s-completed{background:#E4E9EC;color:#4A5A53}
+  .s-no_show{background:#F2E2E6;color:#8A4257}
+  .tab{background:none;border:none;font-family:'Karla',sans-serif;font-weight:500;font-size:14px;color:#6E7A73;cursor:pointer;padding:9px 15px;border-radius:999px}
+  .tab.active{background:#22302B;color:#FAF6F0}
+  .row{border-top:1px solid #EDE8DF}
+  .nm{cursor:pointer;text-decoration:underline;text-decoration-color:#C7D5CC;text-underline-offset:3px}
+  .nm:hover{text-decoration-color:#3E6157}
+  .tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:4px 11px;border-radius:999px;background:#EDF1EE;color:#3E6157;border:1px solid #D6E1DA}
+  .tag button{border:none;background:none;cursor:pointer;color:#8A9089;font-weight:700;font-size:13px;line-height:1;padding:0}
+  .chip{font-size:12px;font-weight:500;padding:6px 12px;border-radius:999px;background:#FFFDF9;border:1.5px solid #DDD5C8;color:#4A5A53;cursor:pointer;font-family:'Karla',sans-serif}
+  .chip:hover{border-color:#3E6157;color:#3E6157}
+  .stat{flex:1;min-width:92px;background:#F3EDE4;border:1px solid #E4DDD2;border-radius:4px;padding:11px 13px}
+  .stat .n{font-size:21px;font-weight:400;font-family:'Newsreader',Georgia,serif;line-height:1.1}
+  .stat .l{font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#8A9089;margin-top:5px}
+  .seclabel{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#8A9089;margin:22px 0 9px}
+  .fld{margin-bottom:12px}
+  .fld>label{font-size:11.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#8A9089;display:block;margin-bottom:5px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+  .app{display:flex;min-height:100vh}
+  .sidebar{width:236px;flex-shrink:0;background:#22302B;color:#C4CFC7;display:flex;flex-direction:column;
+           position:sticky;top:0;height:100vh;padding:22px 16px;gap:3px}
+  .brand{display:flex;align-items:center;gap:11px;padding:0 8px 18px;margin-bottom:8px;border-bottom:1px solid #35443E}
+  .brand img{height:34px;width:auto;display:block}
+  .brand .bt{font-family:'Newsreader',Georgia,serif;font-size:15px;color:#FAF6F0;letter-spacing:.04em;line-height:1.15}
+  .nav{display:flex;align-items:center;gap:12px;width:100%;background:none;border:none;cursor:pointer;
+       font-family:'Karla',sans-serif;font-weight:500;font-size:14.5px;color:#A9B6AE;padding:11px 13px;border-radius:999px;text-align:left}
+  .nav:hover{background:#2C3B35;color:#FAF6F0}
+  .nav.active{background:#3E6157;color:#FAF6F0}
+  .nav .badge{margin-left:auto;font-size:11px;font-weight:700;background:#C9A227;color:#22302B;border-radius:999px;padding:1px 8px;min-width:20px;text-align:center}
+  .nav.active .badge{background:#FAF6F0;color:#3E6157}
+  .main{flex:1;min-width:0;padding:30px 30px 80px;background:#FAF6F0}
+  .maxw{max-width:940px;margin:0 auto}
+  .topbar{display:none}
+  .view{display:none}
+  .view.active{display:block}
+  .vhead{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+  .vtitle{font-family:'Newsreader',Georgia,serif;font-size:30px;font-weight:300;letter-spacing:-0.015em}
+
+  .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+  .cal .dow{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#8A9089;text-align:center;padding:4px 0}
+  .cell{min-height:84px;background:#FFFDF9;border:1px solid #E4DDD2;border-radius:4px;padding:7px 8px;display:flex;flex-direction:column;gap:3px}
+  .cell.empty{background:transparent;border:none}
+  .cell.closed{background:#F3EDE4}
+  .cell.today{border-color:#3E6157;box-shadow:0 0 0 1.5px #3E6157 inset}
+  .cell .dn{font-size:12.5px;font-weight:700;color:#4A5A53}
+  .cell .cl{font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#B5A99A}
+  .ev{font-size:11.5px;font-weight:500;color:#3E6157;background:#E1EBE4;border-radius:3px;padding:2px 6px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ev:hover{filter:brightness(.97)}
+
+  .alert{display:flex;gap:10px;align-items:flex-start;background:#FBEEEA;border:1px solid #E9CDC6;color:#A2493F;border-radius:4px;padding:12px 14px;font-size:13.5px;font-weight:500}
+  .nudge{display:flex;align-items:center;gap:11px;font-size:13.5px;padding:10px 12px;border-radius:4px;margin-bottom:8px}
+  .nudge-stale{background:#FBF4EA;border:1px solid #EADCC6;color:#7A5414}
+  .nudge-bday{background:#F2EFF7;border:1px solid #DCD4EA;color:#553A85}
+  .ntag{font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:3px;flex-shrink:0}
+  .ntag-stale{background:#EADCC6;color:#7A5414}
+  .ntag-bday{background:#DCD4EA;color:#553A85}
+
+  details.visit{border:1px solid #E4DDD2;border-radius:4px;background:#FFFDF9;margin-bottom:8px}
+  details.visit>summary{list-style:none;cursor:pointer;padding:12px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  details.visit>summary::-webkit-details-marker{display:none}
+  details.visit[open]>summary{border-bottom:1px solid #EDE8DF}
+  .visit-body{padding:12px 14px 14px}
+  .pain{font-weight:700;border-radius:3px;padding:1px 8px;font-size:12px}
+
+  .m-overlay{position:fixed;inset:0;background:rgba(34,48,43,.45);display:none;align-items:flex-start;justify-content:center;z-index:90;padding:40px 16px;overflow-y:auto}
+  .m-overlay.open{display:flex}
+  .m-card{background:#FAF6F0;border-radius:6px;max-width:600px;width:100%;padding:24px;box-shadow:0 30px 60px -20px rgba(0,0,0,.4)}
+
+  .overlay{position:fixed;inset:0;background:rgba(34,48,43,.42);opacity:0;pointer-events:none;transition:opacity .2s ease;z-index:60}
+  .overlay.open{opacity:1;pointer-events:auto}
+  .drawer{position:fixed;top:0;right:0;height:100%;width:min(580px,100%);background:#FAF6F0;box-shadow:-18px 0 50px -30px rgba(34,48,43,.6);
+          transform:translateX(100%);transition:transform .24s ease;z-index:70;overflow-y:auto}
+  .drawer.open{transform:translateX(0)}
+
+  .demobar{background:#F3EDE4;border-bottom:1px solid #E4DDD2;color:#8A6D18;font-size:12.5px;padding:7px 16px;text-align:center}
+  .demobar strong{font-weight:700}
+
+  @media(max-width:820px){
+    .sidebar{position:fixed;left:0;top:0;z-index:80;transform:translateX(-100%);transition:transform .2s ease}
+    .sidebar.open{transform:translateX(0);box-shadow:18px 0 50px -30px rgba(0,0,0,.6)}
+    .topbar{display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:30;background:#22302B;color:#FAF6F0;padding:12px 16px}
+    .topbar .serif{font-size:15px;letter-spacing:.04em}
+    .menuBtn{background:none;border:none;color:#FAF6F0;cursor:pointer;line-height:1;padding:0;display:flex}
+    .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:75;display:none}
+    .scrim.open{display:block}
+    .main{padding:18px 16px 70px}
+    .grid2{grid-template-columns:1fr}
+  }
+  @media(max-width:680px){.hide-sm{display:none}}
+
+  @media print{
+    body{background:#fff}
+    .no-print,.sidebar,.topbar,.demobar{display:none!important}
+    .main{padding:0}
+    .drawer{position:static;transform:none;width:100%;box-shadow:none;background:#fff;height:auto}
+    .overlay,.m-overlay{display:none!important}
+    details.visit{break-inside:avoid}
+    details.visit>div{display:block!important}
+  }
+</style>
+</head>
+<body>
+
+<div class="demobar">
+  <strong>Demo mode</strong> &nbsp;·&nbsp; sample data only. Changes are kept in this browser tab and reset when you refresh.
+</div>
+
+<div id="app" class="app">
+  <div id="scrim" class="scrim" onclick="toggleSidebar(false)"></div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="brand">
+      <img src="/assets/img/logo-mark.png" alt="">
+      <span class="bt">JV MASSAGE<br>STAFF</span>
+    </div>
+    <button class="nav active" data-view="dashboard" onclick="setView('dashboard')">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg> Dashboard</button>
+    <button class="nav" data-view="appointments" onclick="setView('appointments')">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4h6v3H9z"/><path d="M9 11h6M9 15h4"/></svg> Appointments
+      <span class="badge" id="nav-pending" style="display:none"></span></button>
+    <button class="nav" data-view="clients" onclick="setView('clients')">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c0-3.2 2.8-5 5.5-5s5.5 1.8 5.5 5"/><path d="M16 5.5a3 3 0 0 1 0 6"/><path d="M20.5 20c0-2.6-1.8-4.2-3.8-4.7"/></svg> Clients</button>
+    <button class="nav" data-view="calendar" onclick="setView('calendar')">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg> Calendar</button>
+    <div style="margin-top:auto;padding-top:14px;border-top:1px solid #35443E">
+      <div style="font-size:12.5px;color:#8A9089;padding:0 8px 10px">Virgie · JV Massage Ltd.</div>
+      <a class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;text-decoration:none" href="/index.html">View public site</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <button class="menuBtn" onclick="toggleSidebar(true)" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <span class="serif">JV MASSAGE · STAFF</span>
+    </div>
+
+    <div class="maxw">
+
+      <section id="v-dashboard" class="view active">
+        <div class="vhead"><div class="vtitle">Dashboard</div>
+          <div class="no-print" style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn btn-ghost btn-sm" onclick="resetDemo()">Reset demo</button>
+            <button class="btn btn-teal btn-sm" onclick="openApptForm()">+ Appointment</button>
+          </div></div>
+        <div id="nudges" style="margin-bottom:18px"></div>
+        <div id="upcoming" class="card" style="padding:0;overflow:hidden"></div>
+      </section>
+
+      <section id="v-appointments" class="view">
+        <div class="vhead"><div class="vtitle">Appointments</div>
+          <div class="no-print" style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn btn-teal btn-sm" onclick="openApptForm()">+ Appointment</button>
+          </div></div>
+        <div class="card no-print" style="padding:8px;display:flex;gap:4px;flex-wrap:wrap;margin-bottom:18px">
+          <button class="tab active" data-filter="pending" onclick="setFilter(this)">Pending <span id="c-pending"></span></button>
+          <button class="tab" data-filter="confirmed" onclick="setFilter(this)">Confirmed <span id="c-confirmed"></span></button>
+          <button class="tab" data-filter="completed" onclick="setFilter(this)">Completed</button>
+          <button class="tab" data-filter="no_show" onclick="setFilter(this)">No-show</button>
+          <button class="tab" data-filter="declined" onclick="setFilter(this)">Declined</button>
+          <button class="tab" data-filter="all" onclick="setFilter(this)">All</button>
+        </div>
+        <div id="list"></div>
+      </section>
+
+      <section id="v-clients" class="view">
+        <div class="vhead"><div class="vtitle">Clients</div>
+          <button class="btn btn-teal btn-sm no-print" onclick="openAddClient()">+ Client</button></div>
+        <div class="card no-print" style="padding:14px;margin-bottom:18px">
+          <input id="search" type="search" placeholder="Search by name, file #, email or phone…" autocomplete="off" oninput="renderClients()">
+        </div>
+        <div id="clientList"></div>
+      </section>
+
+      <section id="v-calendar" class="view">
+        <div class="vhead">
+          <div class="vtitle">Calendar</div>
+          <div class="no-print" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+            <button class="btn btn-ghost btn-sm" onclick="calMove(-1)">‹ Prev</button>
+            <span id="calLabel" class="serif" style="font-size:17px;min-width:150px;text-align:center"></span>
+            <button class="btn btn-ghost btn-sm" onclick="calMove(1)">Next ›</button>
+            <button class="btn btn-teal btn-sm" onclick="openApptForm()">+ Appointment</button>
+          </div>
+        </div>
+        <div class="card" style="padding:14px"><div id="calGrid"></div></div>
+        <p style="font-size:12.5px;color:#8A9089;margin-top:10px">Studio hours are 9 a.m. – 6 p.m., closed Tuesdays.</p>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<div id="modal" class="m-overlay" onclick="if(event.target===this) closeModal()"><div class="m-card"><div id="modalBody"></div></div></div>
+
+<div id="overlay" class="overlay" onclick="closeDrawer()"></div>
+<div id="drawer" class="drawer"><div id="drawerBody" style="padding:24px"></div></div>
+
+<script>
+let view = "dashboard", filter = "pending", rows = [], clients = {}, openClientId = null;
+let calCursor = new Date();
+
+const KNOWN_TAGS = ["new","regular","prenatal","sensitive-pressure","no-show-risk","VIP"];
+const VISIT_TYPES = ["First visit","Follow-up","Maintenance","Focused treatment"];
+const SEX_OPTS = ["Female","Male","Other","Prefer not to say"];
+const PRESSURE_OPTS = ["Light","Medium","Firm","Deep"];
+const CLOSED_DOW = 2; // Tuesday
+
+const SERVICES = [
+  { id:"therapeutic", name:"Therapeutic Massage",   min:60, price:100 },
+  { id:"deep",        name:"Deep Tissue",           min:60, price:100 },
+  { id:"hotstone",    name:"Hot Stone",             min:90, price:150 },
+  { id:"lymphatic",   name:"Lymphatic Drainage",    min:60, price:100 },
+  { id:"prenatal",    name:"Prenatal",              min:60, price:100 },
+  { id:"relaxation",  name:"Relaxation / Swedish",  min:60, price:100 },
+  { id:"cupping",     name:"Cupping & Thai Stretch",min:90, price:150 },
+  { id:"kids",        name:"Toddler & Kids",        min:30, price:50 },
+];
+const DURATION_PRICE = { 30:50, 60:100, 90:150, 120:200 };
+
+function el(id){ return document.getElementById(id); }
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m])); }
+function attr(s){ return esc(s); }
+function pad(n){ return String(n).padStart(2,"0"); }
+function dstr(d){ return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate()); }
+function todayStr(){ return dstr(new Date()); }
+function shiftDays(n){ const d=new Date(); d.setDate(d.getDate()+n); return dstr(d); }
+function daysBetween(a,b){ return Math.round((new Date(b)-new Date(a))/86400000); }
+function v(id){ return (el(id) && el(id).value || "").trim(); }
+function uid(){ return "id"+Math.random().toString(36).slice(2,10); }
+// Tuesdays are closed; nudge a seeded date forward so demo data never lands on one.
+function openDay(ds){ const d=new Date(ds+"T00:00:00"); if(d.getDay()===CLOSED_DOW){ d.setDate(d.getDate()+1); } return dstr(d); }
+
+// ---- demo seed --------------------------------------------------------------
+function seed(){
+  const C = [
+    { full_name:"Meagan Villanueva", file_no:"1041", phone:"(587) 220-4417", email:"meagan.v@example.com",
+      dob:"1998-03-14", sex:"Female", pressure:"Firm", tags:["regular","VIP"],
+      allergies:"", avoid_areas:"", intake:"Desk job, 8 hrs/day at a monitor. Old volleyball injury, right shoulder.",
+      client_notes:"Books every 3 weeks, usually Saturday mornings. Prefers the room warm and minimal talking.",
+      medications:"", medical_history:"Right rotator cuff strain (2019), fully healed.",
+      address:"Falconridge, Calgary", emergency_contact:"Ana V. — (587) 220-4418",
+      insurance_provider:"", insurance_member_id:"", referred_by:"", last_seen: shiftDays(-12) },
+
+    { full_name:"Ronald Lightfoot", file_no:"1042", phone:"(403) 555-0173", email:"r.lightfoot@example.com",
+      dob:"1972-11-02", sex:"Male", pressure:"Deep", tags:["regular"],
+      allergies:"Nut-based carrier oils — use grapeseed only.", avoid_areas:"",
+      intake:"Drives long haul. Lower back and hips seize up on multi-day runs.",
+      client_notes:"Wants deep work through the glutes and low back. Always asks for hot stones if there's time.",
+      medications:"Naproxen as needed.", medical_history:"Chronic lumbar tightness. No surgeries.",
+      address:"Castleridge, Calgary", emergency_contact:"Dana L. — (403) 555-0174",
+      insurance_provider:"Blue Cross", insurance_member_id:"BC-88213", referred_by:"Meagan V.", last_seen: shiftDays(-5) },
+
+    { full_name:"Ma-an Reyes", file_no:"1043", phone:"(587) 991-2260", email:"maan.reyes@example.com",
+      dob:"1989-08-19", sex:"Female", pressure:"Light", tags:["prenatal","sensitive-pressure"],
+      allergies:"", avoid_areas:"No deep abdominal work. Side-lying only.",
+      intake:"28 weeks pregnant. Low back and hip discomfort, some swelling in ankles.",
+      client_notes:"Side-lying with full bolstering. Keep sessions to 60 min. Check in often about comfort.",
+      medications:"Prenatal vitamins.", medical_history:"Second pregnancy, no complications.",
+      address:"Saddleridge, Calgary", emergency_contact:"Paulo R. — (587) 991-2261",
+      insurance_provider:"", insurance_member_id:"", referred_by:"", last_seen: shiftDays(-9) },
+
+    { full_name:"Trevor Nakamura", file_no:"1044", phone:"(403) 555-0198", email:"t.nakamura@example.com",
+      dob:"2011-06-30", sex:"Male", pressure:"Light", tags:["new"],
+      allergies:"", avoid_areas:"",
+      intake:"Age 14. Hockey — sore hamstrings and calves through the season.",
+      client_notes:"Parent stays in the room. Short 30-minute sessions.",
+      medications:"", medical_history:"", address:"Martindale, Calgary",
+      emergency_contact:"Keiko N. — (403) 555-0199",
+      insurance_provider:"", insurance_member_id:"", referred_by:"Ronald L.", last_seen: shiftDays(-121) },
+
+    { full_name:"Priya Deshmukh", file_no:"1045", phone:"(587) 444-7712", email:"priya.d@example.com",
+      dob: (new Date().getFullYear()-41)+"-"+pad(new Date().getMonth()+1)+"-"+pad(Math.min(28,new Date().getDate()+3)),
+      sex:"Female", pressure:"Medium", tags:["regular"],
+      allergies:"", avoid_areas:"Left knee — recent meniscus repair, no pressure.",
+      intake:"Post-surgical recovery, left knee. Cleared by surgeon for lymphatic work.",
+      client_notes:"Lymphatic drainage focus. Elevate the leg with a bolster.",
+      medications:"", medical_history:"Meniscus repair, left knee (4 months ago).",
+      address:"Coral Springs, Calgary", emergency_contact:"Rahul D. — (587) 444-7713",
+      insurance_provider:"Sun Life", insurance_member_id:"SL-40219", referred_by:"", last_seen: shiftDays(-3) },
+  ];
+
+  clients = {};
+  C.forEach(c => { c.id = uid(); clients[c.id] = c; });
+  const byName = n => Object.values(clients).find(c => c.full_name.startsWith(n));
+
+  const mk = (o) => Object.assign({
+    id: uid(), created_at: new Date(Date.now() - Math.random()*6e8).toISOString(),
+    visit_type:null, pain_level:null, chief_complaint:"", regions_treated:"",
+    soap_s:"", soap_o:"", soap_a:"", soap_p:"", notes:""
+  }, o);
+
+  const svc = id => SERVICES.find(s => s.id === id);
+  const B = [
+    // pending requests from the public site
+    mk({ client_id:null, client_name:"Aditi Sharma", phone:"(587) 303-1188", email:"aditi.s@example.com",
+         service_id:"therapeutic", service_name:"Therapeutic Massage", duration_min:60, price:100,
+         appt_date: openDay(shiftDays(3)), appt_time:"11:00 AM", status:"pending",
+         notes:"Weekday mornings if possible. Neck and upper back have been tight." }),
+    mk({ client_id: byName("Trevor").id, client_name:"Trevor Nakamura", phone:"(403) 555-0198", email:"t.nakamura@example.com",
+         service_id:"kids", service_name:"Toddler & Kids", duration_min:30, price:50,
+         appt_date: openDay(shiftDays(5)), appt_time:"4:00 PM", status:"pending",
+         notes:"After school. Hamstrings again." }),
+
+    // confirmed / upcoming
+    mk({ client_id: byName("Priya").id, client_name:"Priya Deshmukh", phone:"(587) 444-7712", email:"priya.d@example.com",
+         service_id:"lymphatic", service_name:"Lymphatic Drainage", duration_min:60, price:100,
+         appt_date: openDay(todayStr()), appt_time:"1:00 PM", status:"confirmed", visit_type:"Follow-up" }),
+    mk({ client_id: byName("Ronald").id, client_name:"Ronald Lightfoot", phone:"(403) 555-0173", email:"r.lightfoot@example.com",
+         service_id:"deep", service_name:"Deep Tissue", duration_min:60, price:100,
+         appt_date: openDay(todayStr()), appt_time:"3:30 PM", status:"confirmed", visit_type:"Maintenance" }),
+    mk({ client_id: byName("Ma-an").id, client_name:"Ma-an Reyes", phone:"(587) 991-2260", email:"maan.reyes@example.com",
+         service_id:"prenatal", service_name:"Prenatal", duration_min:60, price:100,
+         appt_date: openDay(shiftDays(2)), appt_time:"10:00 AM", status:"confirmed", visit_type:"Follow-up" }),
+    mk({ client_id: byName("Meagan").id, client_name:"Meagan Villanueva", phone:"(587) 220-4417", email:"meagan.v@example.com",
+         service_id:"hotstone", service_name:"Hot Stone", duration_min:90, price:150,
+         appt_date: openDay(shiftDays(6)), appt_time:"9:00 AM", status:"confirmed", visit_type:"Maintenance" }),
+
+    // completed history w/ clinical notes
+    mk({ client_id: byName("Ronald").id, client_name:"Ronald Lightfoot", phone:"(403) 555-0173",
+         service_id:"deep", service_name:"Deep Tissue", duration_min:60, price:100,
+         appt_date: shiftDays(-5), appt_time:"3:30 PM", status:"completed", visit_type:"Maintenance",
+         pain_level:7, chief_complaint:"Low back tightness after a 3-day haul", regions_treated:"lumbar, glutes, hamstrings",
+         soap_s:"Reports 7/10 ache across the low back, worse after long drives. Sleep disturbed two nights this week.",
+         soap_o:"Marked hypertonicity in right QL and both glute medius. Limited lumbar flexion.",
+         soap_a:"Chronic postural overload consistent with prolonged sitting.",
+         soap_p:"Deep tissue through lumbar and glutes, 60 min. Hot stones to open before hands. Home care: doorway stretch, hourly standing breaks." }),
+    mk({ client_id: byName("Ronald").id, client_name:"Ronald Lightfoot", phone:"(403) 555-0173",
+         service_id:"deep", service_name:"Deep Tissue", duration_min:60, price:100,
+         appt_date: shiftDays(-26), appt_time:"5:00 PM", status:"completed", visit_type:"Follow-up",
+         pain_level:5, chief_complaint:"Low back, improving", regions_treated:"lumbar, glutes",
+         soap_s:"Down to 5/10. Stretches being done most days.", soap_o:"QL tone reduced from last visit. Flexion improved.",
+         soap_a:"Responding well to 3-week interval.", soap_p:"Continue deep tissue, same interval." }),
+    mk({ client_id: byName("Ronald").id, client_name:"Ronald Lightfoot", phone:"(403) 555-0173",
+         service_id:"therapeutic", service_name:"Therapeutic Massage", duration_min:60, price:100,
+         appt_date: shiftDays(-54), appt_time:"5:00 PM", status:"completed", visit_type:"First visit",
+         pain_level:8, chief_complaint:"Severe low back tightness", regions_treated:"lumbar",
+         soap_s:"8/10 constant ache, 6 weeks duration.", soap_o:"Global lumbar guarding, painful on palpation.",
+         soap_a:"Acute-on-chronic overload.", soap_p:"Moderate pressure only this visit. Rebook in 3 weeks." }),
+    mk({ client_id: byName("Meagan").id, client_name:"Meagan Villanueva", phone:"(587) 220-4417",
+         service_id:"hotstone", service_name:"Hot Stone", duration_min:90, price:150,
+         appt_date: shiftDays(-12), appt_time:"9:00 AM", status:"completed", visit_type:"Maintenance",
+         pain_level:3, chief_complaint:"General shoulder and neck tension", regions_treated:"cervical, upper traps, scapular",
+         soap_s:"3/10, mostly stiffness rather than pain.", soap_o:"Upper trap tone bilaterally, right worse.",
+         soap_a:"Postural tension, desk-related.", soap_p:"Hot stone 90 min, focus upper traps. Continue 3-week rhythm." }),
+    mk({ client_id: byName("Ma-an").id, client_name:"Ma-an Reyes", phone:"(587) 991-2260",
+         service_id:"prenatal", service_name:"Prenatal", duration_min:60, price:100,
+         appt_date: shiftDays(-9), appt_time:"10:00 AM", status:"completed", visit_type:"Follow-up",
+         pain_level:4, chief_complaint:"Low back and hip discomfort, 27 wks", regions_treated:"low back, hips, legs",
+         soap_s:"4/10 low back. Ankle swelling by evening.", soap_o:"Side-lying tolerated well. Mild pitting oedema, both ankles.",
+         soap_a:"Typical third-trimester load.", soap_p:"Side-lying prenatal, bolstered. Light lymphatic to lower legs. Rebook 2 weeks." }),
+    mk({ client_id: byName("Priya").id, client_name:"Priya Deshmukh", phone:"(587) 444-7712",
+         service_id:"lymphatic", service_name:"Lymphatic Drainage", duration_min:60, price:100,
+         appt_date: shiftDays(-3), appt_time:"1:00 PM", status:"completed", visit_type:"Follow-up",
+         pain_level:2, chief_complaint:"Post-surgical swelling, left knee", regions_treated:"left leg, thigh",
+         soap_s:"2/10. Swelling noticeably down since last session.", soap_o:"Reduced oedema around patella. No heat or redness.",
+         soap_a:"Good post-surgical progression.", soap_p:"Light lymphatic, leg elevated. No direct knee pressure." }),
+
+    // a no-show and a declined, so those tabs aren't empty
+    mk({ client_id: byName("Trevor").id, client_name:"Trevor Nakamura", phone:"(403) 555-0198",
+         service_id:"kids", service_name:"Toddler & Kids", duration_min:30, price:50,
+         appt_date: shiftDays(-121), appt_time:"4:30 PM", status:"no_show" }),
+    mk({ client_id:null, client_name:"Chris Boudreau", phone:"(403) 555-0140", email:"c.boudreau@example.com",
+         service_id:"therapeutic", service_name:"Therapeutic Massage", duration_min:60, price:100,
+         appt_date: shiftDays(-8), appt_time:"7:30 PM", status:"declined",
+         notes:"Asked for 7:30 PM — outside studio hours." }),
+  ];
+  rows = B;
+  save();
+}
+
+// Demo persistence: sessionStorage only, so a refresh of the tab restores the
+// seeded state and nothing leaks between browsers.
+function save(){
+  try { sessionStorage.setItem("jv_demo", JSON.stringify({ rows, clients })); } catch(_){}
+}
+function restore(){
+  try {
+    const raw = sessionStorage.getItem("jv_demo");
+    if(!raw) return false;
+    const d = JSON.parse(raw);
+    if(!d || !d.rows || !d.clients) return false;
+    rows = d.rows; clients = d.clients;
+    return true;
+  } catch(_){ return false; }
+}
+function resetDemo(){
+  if(!confirm("Reset the demo back to its sample data?")) return;
+  sessionStorage.removeItem("jv_demo");
+  seed(); closeDrawer(); closeModal(); renderAll();
+}
+
+function init(){
+  if(!restore()) seed();
+  document.addEventListener("keydown", e => { if(e.key === "Escape"){ closeDrawer(); closeModal(); toggleSidebar(false); } });
+  setView("dashboard");
+  renderAll();
+}
+
+// ---- navigation -------------------------------------------------------------
+function setView(vw){
+  view = vw;
+  document.querySelectorAll(".nav").forEach(n => n.classList.toggle("active", n.dataset.view === vw));
+  document.querySelectorAll(".view").forEach(s => s.classList.toggle("active", s.id === "v-"+vw));
+  toggleSidebar(false);
+  if(vw === "calendar") renderCalendar();
+  if(vw === "clients") renderClients();
+}
+function toggleSidebar(open){
+  el("sidebar").classList.toggle("open", open);
+  el("scrim").classList.toggle("open", open);
+}
+function setFilter(btn){
+  document.querySelectorAll("#v-appointments .tab").forEach(t => t.classList.remove("active"));
+  btn.classList.add("active");
+  filter = btn.dataset.filter;
+  renderList();
+}
+
+function renderAll(){
+  counts(); renderUpcoming(); renderNudges(); renderList();
+  if(view === "clients") renderClients();
+  if(view === "calendar") renderCalendar();
+  save();
+}
+function counts(){
+  const p = rows.filter(r => r.status === "pending").length;
+  const c = rows.filter(r => r.status === "confirmed").length;
+  el("c-pending").textContent = p ? "("+p+")" : "";
+  el("c-confirmed").textContent = c ? "("+c+")" : "";
+  const nb = el("nav-pending");
+  if(p){ nb.style.display = "inline-block"; nb.textContent = p; } else { nb.style.display = "none"; }
+}
+
+// ---- client helpers ---------------------------------------------------------
+function clientBookings(cid){
+  return rows.filter(r => r.client_id === cid)
+             .sort((a,b) => (b.appt_date||"").localeCompare(a.appt_date||""));
+}
+function visitStats(cid){
+  const bs = rows.filter(r => r.client_id === cid);
+  const completed = bs.filter(r => r.status === "completed");
+  const noShows   = bs.filter(r => r.status === "no_show").length;
+  const dates = completed.map(r => r.appt_date).filter(Boolean).sort();
+  return { total: completed.length, requests: bs.length, noShows,
+           first: dates[0] || null, last: dates[dates.length-1] || null };
+}
+function painColor(n){ return n>=7 ? '#A2493F' : n>=4 ? '#8A6D18' : '#3E6157'; }
+function painBg(n){ return n>=7 ? '#F3E0DC' : n>=4 ? '#F6EDD9' : '#E1EBE4'; }
+function painTrend(cid){
+  return rows.filter(r => r.client_id===cid && r.pain_level!=null)
+             .sort((a,b)=>(a.appt_date||"").localeCompare(b.appt_date||""))
+             .map(r => r.pain_level);
+}
+
+// ---- Dashboard --------------------------------------------------------------
+function renderUpcoming(){
+  const t = todayStr();
+  const up = rows.filter(r => r.status === "confirmed" && r.appt_date >= t)
+                 .sort((a,b) => (a.appt_date+a.appt_time).localeCompare(b.appt_date+b.appt_time));
+  const header = '<div style="padding:16px 20px;border-bottom:1px solid #EDE8DF;display:flex;align-items:center;gap:10px">'+
+    '<span class="serif" style="font-size:19px">Today &amp; upcoming</span>'+
+    '<span class="pill s-confirmed">'+up.length+'</span></div>';
+  if(!up.length){ el("upcoming").innerHTML = header + '<div style="padding:22px 20px;color:#6E7A73;font-size:14px">No confirmed appointments coming up.</div>'; return; }
+  const items = up.slice(0,14).map(r => {
+    const isToday = r.appt_date === t;
+    return '<div class="row" style="padding:13px 20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap">'+
+      '<div style="min-width:148px">'+
+        '<div style="font-weight:700;font-size:14px;color:'+(isToday?'#3E6157':'#22302B')+'">'+(isToday?'Today':esc(fmtDate(r.appt_date,true)))+'</div>'+
+        '<div style="font-size:13px;color:#6E7A73">'+esc(r.appt_time)+'</div>'+
+      '</div>'+
+      '<div style="flex:1;min-width:160px">'+
+        (r.client_id ? '<span class="nm" style="font-weight:700" onclick="openDrawer(\''+r.client_id+'\')">'+esc(r.client_name)+'</span>'
+                      : '<span style="font-weight:700">'+esc(r.client_name)+'</span>')+
+        '<div class="serif" style="font-size:15px;color:#3E6157">'+esc(r.service_name)+(r.visit_type?' · '+esc(r.visit_type):'')+'</div>'+
+      '</div>'+
+      (r.phone ? '<a class="btn btn-ghost btn-sm" style="text-decoration:none" href="tel:'+esc(r.phone)+'">Call</a>' : '')+
+    '</div>';
+  }).join("");
+  el("upcoming").innerHTML = header + items;
+}
+function renderNudges(){
+  const t = todayStr(), out = [];
+  Object.values(clients).forEach(p => {
+    if(p.last_seen && daysBetween(p.last_seen, t) >= 90){
+      out.push('<div class="nudge nudge-stale"><span class="ntag ntag-stale">Follow-up</span><div>'+
+        '<strong class="nm" onclick="openDrawer(\''+p.id+'\')">'+esc(p.full_name)+'</strong>'+
+        ', last seen '+daysBetween(p.last_seen,t)+' days ago.</div></div>');
+    }
+    if(p.dob){
+      const dob = new Date(p.dob+"T00:00:00"), now = new Date(t+"T00:00:00");
+      let next = new Date(now.getFullYear(), dob.getMonth(), dob.getDate());
+      if(next < now) next = new Date(now.getFullYear()+1, dob.getMonth(), dob.getDate());
+      const dd = daysBetween(t, dstr(next));
+      if(dd >= 0 && dd <= 7){
+        out.push('<div class="nudge nudge-bday"><span class="ntag ntag-bday">Birthday</span><div>'+
+          '<strong class="nm" onclick="openDrawer(\''+p.id+'\')">'+esc(p.full_name)+'</strong>'+
+          ', '+(dd===0?'today':'in '+dd+' day'+(dd===1?'':'s'))+'.</div></div>');
+      }
+    }
+  });
+  el("nudges").innerHTML = out.length ? '<div class="card" style="padding:14px">'+out.join("")+'</div>' : '';
+}
+
+// ---- Clients directory ------------------------------------------------------
+function renderClients(){
+  const q = (el("search").value || "").trim().toLowerCase();
+  let list = Object.values(clients);
+  if(q.length >= 1){
+    list = list.filter(p =>
+      (p.full_name||"").toLowerCase().includes(q) ||
+      (p.email||"").toLowerCase().includes(q) ||
+      (p.phone||"").toLowerCase().includes(q) ||
+      String(p.file_no||"").includes(q));
+  }
+  list.sort((a,b) => (b.last_seen||"").localeCompare(a.last_seen||"") || (a.full_name||"").localeCompare(b.full_name||""));
+  if(!list.length){ el("clientList").innerHTML = '<div class="card" style="padding:30px;text-align:center;color:#6E7A73">No clients'+(q?" match.":" yet.")+'</div>'; return; }
+  el("clientList").innerHTML = '<div class="card" style="overflow:hidden">'+ list.map(p => {
+    const st = visitStats(p.id);
+    const alerts = (p.allergies || p.avoid_areas) ? '<span class="pill s-declined" style="margin-left:6px">Caution</span>' : '';
+    const tags = (p.tags||[]).slice(0,3).map(t => '<span class="tag" style="font-size:11px">'+esc(t)+'</span>').join(" ");
+    return '<div class="row" style="padding:15px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;cursor:pointer" onclick="openDrawer(\''+p.id+'\')">'+
+      '<div style="flex:1;min-width:180px">'+
+        '<div style="font-weight:700;font-size:15.5px">'+esc(p.full_name)+alerts+' '+tags+'</div>'+
+        '<div style="font-size:12.5px;color:#6E7A73;margin-top:2px">#'+esc(p.file_no||'-')+(p.phone?' · '+esc(p.phone):'')+(p.email?' · '+esc(p.email):'')+'</div>'+
+      '</div>'+
+      '<div class="hide-sm" style="text-align:right;font-size:12.5px;color:#6E7A73">'+
+        '<div style="font-weight:700;color:#4A5A53">'+st.total+' visit'+(st.total===1?'':'s')+'</div>'+
+        '<div>'+(st.last?'last '+esc(fmtDate(st.last,true)):'-')+'</div>'+
+      '</div>'+
+    '</div>';
+  }).join("") + '</div>';
+}
+
+// ---- Appointments list ------------------------------------------------------
+function renderList(){
+  const list = filter === "all" ? rows : rows.filter(r => r.status === filter);
+  if(!list.length){ el("list").innerHTML = '<div class="card" style="padding:34px;text-align:center;color:#6E7A73">No '+esc(filter==="all"?"":filter.replace("_"," "))+' bookings.</div>'; return; }
+  const sorted = list.slice().sort((a,b) => (b.appt_date||"").localeCompare(a.appt_date||""));
+  el("list").innerHTML = '<div class="card" style="overflow:hidden">' + sorted.map(rowHtml).join("") + '</div>';
+}
+function rowHtml(r){
+  const price = (r.price && r.price > 0) ? " · $"+r.price : "";
+  const submitted = new Date(r.created_at).toLocaleString("en-US",{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});
+  let actions = "";
+  if(r.status === "pending"){
+    actions =
+      '<button class="btn btn-teal btn-sm" onclick="setStatus(\''+r.id+'\',\'confirmed\')">Confirm</button>'+
+      '<button class="btn btn-red btn-sm" onclick="setStatus(\''+r.id+'\',\'declined\')">Decline</button>';
+  } else if(r.status === "confirmed"){
+    actions =
+      '<button class="btn btn-ghost btn-sm" onclick="setStatus(\''+r.id+'\',\'completed\')">Mark done</button>'+
+      '<button class="btn btn-amber btn-sm" onclick="setStatus(\''+r.id+'\',\'no_show\')">No-show</button>'+
+      '<button class="btn btn-ghost btn-sm" onclick="reschedule(\''+r.id+'\')">Reschedule</button>'+
+      '<button class="btn btn-red btn-sm" onclick="setStatus(\''+r.id+'\',\'cancelled\')">Cancel</button>';
+  } else {
+    actions = '<button class="btn btn-ghost btn-sm" onclick="setStatus(\''+r.id+'\',\'pending\')">Reopen</button>';
+  }
+  const chart = r.client_id ? '<button class="btn btn-ghost btn-sm" onclick="openDrawer(\''+r.client_id+'\')">Open file</button>'
+                            : '<button class="btn btn-ghost btn-sm" onclick="createClientFrom(\''+r.id+'\')">Create file</button>';
+  return ''+
+  '<div class="row" style="padding:18px 20px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">'+
+    '<div style="flex:1;min-width:200px">'+
+      '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">'+
+        (r.client_id ? '<span class="nm" style="font-weight:700;font-size:16px" onclick="openDrawer(\''+r.client_id+'\')">'+esc(r.client_name)+'</span>'
+                      : '<span style="font-weight:700;font-size:16px">'+esc(r.client_name)+'</span>')+
+        '<span class="pill s-'+esc(r.status)+'">'+esc(r.status.replace("_"," "))+'</span>'+
+        (r.visit_type ? '<span class="pill" style="background:#E9EDE9;color:#4A5A53">'+esc(r.visit_type)+'</span>' : '')+
+      '</div>'+
+      '<div class="serif" style="font-size:17px;color:#3E6157;margin-top:5px">'+esc(r.service_name)+price+'</div>'+
+      '<div style="font-size:14px;color:#4A5A53;margin-top:3px">'+esc(fmtDate(r.appt_date))+' · '+esc(r.appt_time)+'</div>'+
+      '<div style="font-size:13.5px;color:#6E7A73;margin-top:8px">'+
+        (r.phone?'<a href="tel:'+esc(r.phone)+'" style="color:#3E6157;text-decoration:none;font-weight:500">'+esc(r.phone)+'</a>':'')+
+        (r.email?' · <a href="mailto:'+esc(r.email)+'" style="color:#6E7A73;text-decoration:none">'+esc(r.email)+'</a>':'')+
+      '</div>'+
+      (r.notes ? '<div style="font-size:13.5px;color:#6E7A73;margin-top:6px;font-style:italic">“'+esc(r.notes)+'”</div>' : '')+
+      '<div class="hide-sm" style="font-size:12px;color:#8A9089;margin-top:8px">Requested '+esc(submitted)+'</div>'+
+    '</div>'+
+    '<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">'+actions+chart+'</div>'+
+  '</div>';
+}
+
+// ---- Calendar ---------------------------------------------------------------
+function calMove(delta){ calCursor.setMonth(calCursor.getMonth()+delta); renderCalendar(); }
+function renderCalendar(){
+  const y = calCursor.getFullYear(), m = calCursor.getMonth();
+  el("calLabel").textContent = calCursor.toLocaleDateString("en-US",{month:"long",year:"numeric"});
+  const first = new Date(y, m, 1).getDay();
+  const days = new Date(y, m+1, 0).getDate();
+  const t = todayStr();
+  const byDate = {};
+  rows.filter(r => ["confirmed","completed","pending"].includes(r.status)).forEach(r => {
+    (byDate[r.appt_date] = byDate[r.appt_date] || []).push(r);
+  });
+  const dow = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].map(d => '<div class="dow">'+d+'</div>').join("");
+  let cells = "";
+  for(let i=0;i<first;i++) cells += '<div class="cell empty"></div>';
+  for(let d=1; d<=days; d++){
+    const ds = y+"-"+pad(m+1)+"-"+pad(d);
+    const closed = new Date(y,m,d).getDay() === CLOSED_DOW;
+    const evs = (byDate[ds]||[]).sort((a,b)=>String(a.appt_time).localeCompare(String(b.appt_time))).map(r =>
+      '<div class="ev" title="'+attr(r.appt_time+' · '+r.client_name+' · '+r.service_name)+'"'+
+      (r.client_id?' onclick="openDrawer(\''+r.client_id+'\')"':'')+'>'+
+      esc(String(r.appt_time).replace(/:00/,""))+' '+esc((r.client_name||"").split(" ")[0])+'</div>'
+    ).join("");
+    cells += '<div class="cell'+(ds===t?' today':'')+(closed?' closed':'')+'"><div class="dn">'+d+'</div>'+
+             (closed && !evs ? '<div class="cl">Closed</div>' : '')+evs+'</div>';
+  }
+  el("calGrid").innerHTML = '<div class="cal">'+dow+cells+'</div>';
+}
+
+// ---- form field helpers -----------------------------------------------------
+function optList(arr, val){ return '<option value="">-</option>'+arr.map(o=>'<option '+(o===val?'selected':'')+'>'+esc(o)+'</option>').join(""); }
+function painOpts(val){ let s='<option value="">-</option>'; for(let i=0;i<=10;i++) s+='<option value="'+i+'" '+(String(val)===String(i)?'selected':'')+'>'+i+'</option>'; return s; }
+
+function pfText(cid, label, field, type){
+  const val = attr(clients[cid][field]||"");
+  return '<div class="fld"><label>'+label+'</label><input type="'+(type||'text')+'" value="'+val+'" onchange="saveClientField(\''+cid+'\',\''+field+'\',this.value)"></div>';
+}
+function pfArea(cid, label, field, ph){
+  return '<div class="fld"><label>'+label+'</label><textarea placeholder="'+attr(ph||'')+'" onchange="saveClientField(\''+cid+'\',\''+field+'\',this.value)">'+esc(clients[cid][field]||"")+'</textarea></div>';
+}
+function pfSel(cid, label, field, opts){
+  return '<div class="fld"><label>'+label+'</label><select onchange="saveClientField(\''+cid+'\',\''+field+'\',this.value)">'+optList(opts, clients[cid][field]||"")+'</select></div>';
+}
+
+// ---- Client file drawer -----------------------------------------------------
+function openDrawer(cid){
+  if(!cid || cid === "null" || cid === "undefined"){ return; }
+  openClientId = cid;
+  const p = clients[cid];
+  el("drawerBody").innerHTML = p ? drawerHtml(p) : '<div style="color:#6E7A73">Client file not found.</div>';
+  el("overlay").classList.add("open");
+  el("drawer").classList.add("open");
+}
+function closeDrawer(){
+  openClientId = null;
+  el("overlay").classList.remove("open");
+  el("drawer").classList.remove("open");
+}
+function refreshDrawer(){ if(openClientId && clients[openClientId]) el("drawerBody").innerHTML = drawerHtml(clients[openClientId]); }
+
+function drawerHtml(p){
+  const st = visitStats(p.id);
+  const bs = clientBookings(p.id);
+  const age = p.dob ? Math.floor(daysBetween(p.dob, todayStr())/365.25) : null;
+
+  let alert = "";
+  if(p.allergies || p.avoid_areas){
+    const bits = [];
+    if(p.allergies)   bits.push('<strong>ALLERGIES</strong> &nbsp;'+esc(p.allergies));
+    if(p.avoid_areas) bits.push('<strong>AVOID</strong> &nbsp;'+esc(p.avoid_areas));
+    alert = '<div class="alert" style="margin-top:16px;flex-direction:column;gap:5px">'+bits.map(b=>'<div>'+b+'</div>').join("")+'</div>';
+  }
+
+  const pts = painTrend(p.id);
+  const trend = pts.length
+    ? '<div style="margin-top:14px;font-size:13px;color:#6E7A73"><strong style="color:#4A5A53">Pain trend (0–10):</strong> '+
+      pts.map((n,i)=>'<span class="pain" style="background:'+painBg(n)+';color:'+painColor(n)+'">'+n+'</span>'+(i<pts.length-1?' <span style="color:#C9C0B2">→</span> ':'')).join('')+'</div>'
+    : '';
+
+  const tags = (p.tags||[]).map(t =>
+    '<span class="tag">'+esc(t)+'<button title="Remove" onclick="removeTag(\''+p.id+'\',\''+esc(t)+'\')">×</button></span>'
+  ).join("");
+  const addable = KNOWN_TAGS.filter(t => !(p.tags||[]).includes(t))
+    .map(t => '<button class="chip" onclick="addTag(\''+p.id+'\',\''+esc(t)+'\')">+ '+esc(t)+'</button>').join("");
+
+  const timeline = bs.map(visitCard).join("")
+    || '<div style="color:#8A9089;font-size:13.5px;padding:8px 0">No visits on record yet.</div>';
+
+  return ''+
+  '<div class="no-print" style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">'+
+    '<button class="btn btn-ghost btn-sm" onclick="closeDrawer()">‹ Back</button>'+
+    '<div style="display:flex;gap:8px;flex-wrap:wrap">'+
+      '<button class="btn btn-teal btn-sm" onclick="openApptForm(\''+p.id+'\')">+ Appointment</button>'+
+      '<button class="btn btn-ghost btn-sm" onclick="window.print()">Print / PDF</button>'+
+    '</div>'+
+  '</div>'+
+
+  '<div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:8px">'+
+    '<div class="serif" style="font-size:27px;font-weight:300">'+esc(p.full_name)+'</div>'+
+    '<span style="font-size:12.5px;font-weight:700;color:#8A9089">File #'+esc(p.file_no||'-')+'</span>'+
+  '</div>'+
+  '<div style="font-size:13px;color:#6E7A73;margin-top:3px">'+
+    (age!=null?age+' yrs':'')+(p.sex?(age!=null?' · ':'')+esc(p.sex):'')+(p.pressure?' · prefers '+esc(p.pressure).toLowerCase()+' pressure':'')+
+  '</div>'+
+  alert+
+
+  '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">'+
+    '<div class="stat"><div class="n">'+st.total+'</div><div class="l">Visits</div></div>'+
+    '<div class="stat"><div class="n">'+(st.last?esc(fmtDate(st.last,true)):'-')+'</div><div class="l">Last seen</div></div>'+
+    '<div class="stat"><div class="n">'+(st.first?esc(fmtDate(st.first,true)):'-')+'</div><div class="l">First seen</div></div>'+
+    '<div class="stat"><div class="n">'+st.noShows+'</div><div class="l">No-shows</div></div>'+
+  '</div>'+
+  trend+
+
+  '<div class="seclabel">Flags</div>'+
+  '<div style="display:flex;gap:6px;flex-wrap:wrap">'+(tags||'<span style="font-size:13px;color:#8A9089">None</span>')+'</div>'+
+  (addable ? '<div class="no-print" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">'+addable+'</div>' : '')+
+
+  '<div class="seclabel">Safety &amp; intake</div>'+
+  pfArea(p.id,'Allergies / oil sensitivities','allergies','None known')+
+  pfArea(p.id,'Areas to avoid','avoid_areas','Injuries, recent surgery, pregnancy restrictions…')+
+  pfArea(p.id,'Intake notes','intake','What they came in for, work, activity…')+
+  '<div class="grid2">'+
+    pfSel(p.id,'Pressure preference','pressure',PRESSURE_OPTS)+
+    pfText(p.id,'Referred by','referred_by')+
+  '</div>'+
+
+  '<div class="seclabel">Health background</div>'+
+  pfArea(p.id,'Current medications','medications','None')+
+  pfArea(p.id,'Medical history','medical_history','Past conditions, surgeries, injuries…')+
+
+  '<div class="seclabel">Details</div>'+
+  '<div class="grid2">'+
+    pfText(p.id,'Full name','full_name')+
+    pfText(p.id,'Date of birth','dob','date')+
+    pfSel(p.id,'Sex','sex',SEX_OPTS)+
+    pfText(p.id,'Phone','phone','tel')+
+    pfText(p.id,'Email','email','email')+
+    pfText(p.id,'File #','file_no')+
+  '</div>'+
+  pfArea(p.id,'Address','address')+
+  pfText(p.id,'Emergency contact','emergency_contact')+
+
+  '<div class="seclabel">Insurance</div>'+
+  '<div class="grid2">'+
+    pfText(p.id,'Provider','insurance_provider')+
+    pfText(p.id,'Member ID','insurance_member_id')+
+  '</div>'+
+  '<div style="font-size:12px;color:#8A9089;margin-top:-4px">JV Massage is a non-RMT wellness practice — kept for the client\'s own records only.</div>'+
+
+  '<div class="seclabel">Standing notes</div>'+
+  pfArea(p.id,'','client_notes','Preferences, room setup, how they like to be treated…')+
+
+  '<div class="seclabel">Visit history &amp; session notes</div>'+
+  timeline+
+
+  '<div class="no-print" style="margin-top:28px;padding-top:16px;border-top:1px solid #E9DDD8">'+
+    '<button class="btn btn-red btn-sm" onclick="deleteClient(\''+p.id+'\')">Delete client</button>'+
+    '<div style="font-size:11.5px;color:#8A9089;margin-top:7px">Removes this file and its visit records from the demo.</div>'+
+  '</div>';
+}
+
+function visitCard(b){
+  const complaint = b.chief_complaint ? ' · '+esc(b.chief_complaint) : '';
+  const painBadge = b.pain_level!=null
+    ? '<span class="pain" style="background:'+painBg(b.pain_level)+';color:'+painColor(b.pain_level)+'">Pain '+b.pain_level+'</span>' : '';
+  return '<details class="visit">'+
+    '<summary>'+
+      '<span style="font-weight:700;font-size:13.5px;min-width:96px">'+esc(fmtDate(b.appt_date,true))+'</span>'+
+      '<span class="pill s-'+esc(b.status)+'">'+esc(b.status.replace("_"," "))+'</span>'+
+      '<span class="serif" style="font-size:15px;color:#3E6157;flex:1;min-width:120px">'+esc(b.service_name)+complaint+'</span>'+
+      painBadge+
+    '</summary>'+
+    '<div class="visit-body">'+
+      '<div class="grid2">'+
+        '<div class="fld"><label>Visit type</label><select onchange="saveBookingField(\''+b.id+'\',\'visit_type\',this.value)">'+optList(VISIT_TYPES,b.visit_type||"")+'</select></div>'+
+        '<div class="fld"><label>Pain (0–10)</label><select onchange="saveBookingField(\''+b.id+'\',\'pain_level\',this.value)">'+painOpts(b.pain_level)+'</select></div>'+
+      '</div>'+
+      '<div class="fld"><label>Chief complaint</label><input value="'+attr(b.chief_complaint||"")+'" onchange="saveBookingField(\''+b.id+'\',\'chief_complaint\',this.value)"></div>'+
+      '<div class="fld"><label>Areas worked</label><input placeholder="e.g. lumbar, upper traps" value="'+attr(b.regions_treated||"")+'" onchange="saveBookingField(\''+b.id+'\',\'regions_treated\',this.value)"></div>'+
+      '<div class="fld"><label>S: Subjective</label><textarea placeholder="What the client reported…" onchange="saveBookingField(\''+b.id+'\',\'soap_s\',this.value)">'+esc(b.soap_s||"")+'</textarea></div>'+
+      '<div class="fld"><label>O: Objective</label><textarea placeholder="What you found — tone, range, tenderness…" onchange="saveBookingField(\''+b.id+'\',\'soap_o\',this.value)">'+esc(b.soap_o||"")+'</textarea></div>'+
+      '<div class="fld"><label>A: Assessment</label><textarea placeholder="Your read on it…" onchange="saveBookingField(\''+b.id+'\',\'soap_a\',this.value)">'+esc(b.soap_a||"")+'</textarea></div>'+
+      '<div class="fld"><label>P: Plan</label><textarea placeholder="Treatment given, home care, rebooking…" onchange="saveBookingField(\''+b.id+'\',\'soap_p\',this.value)">'+esc(b.soap_p||"")+'</textarea></div>'+
+    '</div>'+
+  '</details>';
+}
+
+// ---- mutations (in-memory) --------------------------------------------------
+function setStatus(id, status){
+  const r = rows.find(x => x.id === id); if(!r) return;
+  r.status = status;
+  // Completing a visit updates the client's "last seen" the way a real booking would.
+  if(status === "completed" && r.client_id && clients[r.client_id]){
+    const c = clients[r.client_id];
+    if(!c.last_seen || r.appt_date > c.last_seen) c.last_seen = r.appt_date;
+  }
+  renderAll(); refreshDrawer();
+}
+function saveBookingField(id, field, value){
+  const r = rows.find(x => x.id === id); if(!r) return;
+  r[field] = (value === "") ? null : (field === "pain_level" ? Number(value) : value);
+  save();
+  if(field === "pain_level") refreshDrawer();
+}
+function saveClientField(cid, field, value){
+  const c = clients[cid]; if(!c) return;
+  c[field] = value;
+  save();
+  if(field === "dob") renderNudges();
+  if(field === "full_name" || field === "allergies" || field === "avoid_areas"){ renderClients(); refreshDrawer(); }
+}
+function addTag(cid, tag){
+  const p = clients[cid]; if(!p) return;
+  p.tags = Array.from(new Set([...(p.tags||[]), tag]));
+  save(); refreshDrawer(); renderClients();
+}
+function removeTag(cid, tag){
+  const p = clients[cid]; if(!p) return;
+  p.tags = (p.tags||[]).filter(t => t !== tag);
+  save(); refreshDrawer(); renderClients();
+}
+function deleteClient(cid){
+  const p = clients[cid]; if(!p) return;
+  const n = clientBookings(cid).length;
+  const msg = n
+    ? "Delete "+(p.full_name||"this client")+" and their "+n+" booking record"+(n===1?"":"s")+"?"
+    : "Delete "+(p.full_name||"this client")+"?";
+  if(!confirm(msg)) return;
+  rows = rows.filter(r => r.client_id !== cid);
+  delete clients[cid];
+  closeDrawer(); renderAll();
+}
+
+// Turn a walk-in/public booking that has no file yet into a real client record.
+function createClientFrom(bid){
+  const r = rows.find(x => x.id === bid); if(!r) return;
+  const nums = Object.values(clients).map(c => Number(c.file_no)||0);
+  const next = String(Math.max(1040, ...nums) + 1);
+  const c = { id: uid(), full_name: r.client_name, file_no: next, phone: r.phone||"", email: r.email||"",
+              dob:"", sex:"", pressure:"", tags:["new"], allergies:"", avoid_areas:"",
+              intake: r.notes||"", client_notes:"", medications:"", medical_history:"",
+              address:"", emergency_contact:"", insurance_provider:"", insurance_member_id:"",
+              referred_by:"", last_seen: r.status==="completed" ? r.appt_date : null };
+  clients[c.id] = c;
+  rows.filter(x => !x.client_id && x.client_name === r.client_name).forEach(x => { x.client_id = c.id; });
+  renderAll(); openDrawer(c.id);
+}
+
+function reschedule(id){
+  const r = rows.find(x => x.id === id); if(!r) return;
+  const date = prompt("New date (YYYY-MM-DD):", r.appt_date);
+  if(!date) return;
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(date)){ alert("Please use the format YYYY-MM-DD."); return; }
+  if(new Date(date+"T00:00:00").getDay() === CLOSED_DOW && !confirm("That's a Tuesday — the studio is normally closed. Schedule anyway?")) return;
+  const time = prompt("New time (e.g. 2:00 PM):", r.appt_time);
+  if(!time) return;
+  rows.unshift(Object.assign({}, r, { id: uid(), created_at: new Date().toISOString(),
+    appt_date: date, appt_time: time, status: "confirmed", rescheduled_from: r.id }));
+  r.status = "cancelled";
+  renderAll();
+}
+
+// ---- modals -----------------------------------------------------------------
+function openModal(html){ el("modalBody").innerHTML = html; el("modal").classList.add("open"); }
+function closeModal(){ el("modal").classList.remove("open"); }
+
+function openAddClient(){
+  openModal(
+    '<div class="serif" style="font-size:23px;font-weight:300;margin-bottom:4px">New client</div>'+
+    '<p style="font-size:13px;color:#6E7A73;margin-bottom:16px">Create the file now — the rest can be filled in after.</p>'+
+    '<div class="fld"><label>Full name *</label><input id="np_name" autofocus></div>'+
+    '<div class="grid2">'+
+      '<div class="fld"><label>Phone</label><input id="np_phone" type="tel"></div>'+
+      '<div class="fld"><label>Email</label><input id="np_email" type="email"></div>'+
+      '<div class="fld"><label>Date of birth</label><input id="np_dob" type="date"></div>'+
+      '<div class="fld"><label>Pressure preference</label><select id="np_pressure">'+optList(PRESSURE_OPTS,"")+'</select></div>'+
+    '</div>'+
+    '<div class="fld"><label>Allergies / oil sensitivities</label><input id="np_allergies" placeholder="None known"></div>'+
+    '<div id="np_err" style="display:none;color:#A2493F;font-weight:500;font-size:13.5px;margin:4px 0"></div>'+
+    '<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">'+
+      '<button class="btn btn-ghost btn-sm" onclick="closeModal()">Cancel</button>'+
+      '<button class="btn btn-teal btn-sm" id="np_save" onclick="createClient()">Create file</button>'+
+    '</div>'
+  );
+}
+function createClient(){
+  const name = v("np_name");
+  if(!name){ el("np_err").textContent = "Please enter the client's name."; el("np_err").style.display="block"; return; }
+  const nums = Object.values(clients).map(c => Number(c.file_no)||0);
+  const c = { id: uid(), full_name: name, file_no: String(Math.max(1040, ...nums)+1),
+              phone: v("np_phone"), email: v("np_email"), dob: v("np_dob"), sex:"",
+              pressure: v("np_pressure"), tags:["new"], allergies: v("np_allergies"), avoid_areas:"",
+              intake:"", client_notes:"", medications:"", medical_history:"", address:"",
+              emergency_contact:"", insurance_provider:"", insurance_member_id:"", referred_by:"", last_seen:null };
+  clients[c.id] = c;
+  closeModal(); renderAll(); openDrawer(c.id);
+}
+
+function openApptForm(prefillCid){
+  const plist = Object.values(clients).sort((a,b)=>(a.full_name||"").localeCompare(b.full_name||""));
+  const opts = plist.map(p => '<option value="'+p.id+'" '+(p.id===prefillCid?'selected':'')+'>'+esc(p.full_name)+' (#'+esc(p.file_no||'-')+')</option>').join("");
+  const svcOpts = SERVICES.map(s => '<option value="'+s.id+'">'+esc(s.name)+'</option>').join("");
+  const durOpts = Object.keys(DURATION_PRICE).map(d => '<option value="'+d+'"'+(d==="60"?' selected':'')+'>'+d+' min · $'+DURATION_PRICE[d]+'</option>').join("");
+  openModal(
+    '<div class="serif" style="font-size:23px;font-weight:300;margin-bottom:14px">New appointment</div>'+
+    '<div class="fld"><label>Client</label><select id="ap_client" onchange="toggleApptNew()">'+
+      '<option value="__new">+ New client…</option>'+opts+'</select></div>'+
+    '<div id="ap_newbox" style="display:'+(prefillCid?'none':'block')+'">'+
+      '<div class="grid2">'+
+        '<div class="fld"><label>Name *</label><input id="ap_name"></div>'+
+        '<div class="fld"><label>Phone</label><input id="ap_phone" type="tel"></div>'+
+      '</div>'+
+      '<div class="fld"><label>Email</label><input id="ap_email" type="email"></div>'+
+    '</div>'+
+    '<div class="grid2">'+
+      '<div class="fld"><label>Service</label><select id="ap_service">'+svcOpts+'</select></div>'+
+      '<div class="fld"><label>Length</label><select id="ap_dur">'+durOpts+'</select></div>'+
+      '<div class="fld"><label>Date</label><input id="ap_date" type="date" value="'+todayStr()+'"></div>'+
+      '<div class="fld"><label>Time</label><input id="ap_time" placeholder="e.g. 2:00 PM"></div>'+
+      '<div class="fld"><label>Visit type</label><select id="ap_vtype">'+optList(VISIT_TYPES,"")+'</select></div>'+
+      '<div class="fld"><label>Status</label><select id="ap_status"><option value="confirmed">Confirmed</option><option value="pending">Pending</option></select></div>'+
+    '</div>'+
+    '<div id="ap_err" style="display:none;color:#A2493F;font-weight:500;font-size:13.5px;margin:4px 0"></div>'+
+    '<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">'+
+      '<button class="btn btn-ghost btn-sm" onclick="closeModal()">Cancel</button>'+
+      '<button class="btn btn-teal btn-sm" id="ap_save" onclick="createAppointment()">Schedule</button>'+
+    '</div>'
+  );
+  if(prefillCid) el("ap_client").value = prefillCid;
+  toggleApptNew();
+}
+function toggleApptNew(){
+  el("ap_newbox").style.display = el("ap_client").value === "__new" ? "block" : "none";
+}
+function createAppointment(){
+  const err = (m)=>{ el("ap_err").textContent = m; el("ap_err").style.display="block"; };
+  const sel = el("ap_client").value;
+  const date = v("ap_date"), time = v("ap_time");
+  if(!date) return err("Pick a date.");
+  if(!time) return err("Enter a time.");
+  if(new Date(date+"T00:00:00").getDay() === CLOSED_DOW && !confirm("That's a Tuesday — the studio is normally closed. Schedule anyway?")) return;
+  const svc = SERVICES.find(s => s.id === v("ap_service")) || SERVICES[0];
+  const dur = Number(v("ap_dur")) || 60;
+
+  const rec = { id: uid(), created_at: new Date().toISOString(),
+    service_id: svc.id, service_name: svc.name, duration_min: dur, price: DURATION_PRICE[dur] || svc.price,
+    appt_date: date, appt_time: time, status: v("ap_status")||"confirmed",
+    visit_type: v("ap_vtype")||null, client_id:null, client_name:"", phone:"", email:"",
+    pain_level:null, chief_complaint:"", regions_treated:"", soap_s:"", soap_o:"", soap_a:"", soap_p:"", notes:"" };
+
+  if(sel === "__new"){
+    const name = v("ap_name");
+    if(!name) return err("Enter the new client's name.");
+    rec.client_name = name; rec.phone = v("ap_phone"); rec.email = v("ap_email");
+  } else {
+    const p = clients[sel];
+    if(!p) return err("Choose a client.");
+    rec.client_id = p.id; rec.client_name = p.full_name; rec.phone = p.phone||""; rec.email = p.email||"";
+  }
+  rows.unshift(rec);
+  closeModal(); renderAll();
+  if(sel !== "__new") openDrawer(sel);
+}
+
+// ---- date formatting --------------------------------------------------------
+function fmtDate(d, short){
+  const parts = String(d).split("-");
+  if(parts.length !== 3) return d;
+  const dt = new Date(Number(parts[0]), Number(parts[1])-1, Number(parts[2]));
+  return dt.toLocaleDateString("en-US", short
+    ? {month:"short",day:"numeric"}
+    : {weekday:"short",month:"long",day:"numeric"});
+}
+
+init();
+</script>
+</body>
+</html>
